@@ -1,27 +1,27 @@
-# Session YYYY-MM-DD-N
+# Sessão YYYY-MM-DD-N
 
-<!-- Copy to YYYY-MM-DD-session-N.md. This records the operator's evolution, not a changelog of code. -->
+<!-- Copie para YYYY-MM-DD-session-N.md. Isto registra a evolução do operador, não um changelog do código. -->
 
-## Context
+## Contexto
 
-## What I worked on
+## No que trabalhei
 
-## What I understood
+## O que entendi
 
-## What confused me
+## O que me confundiu
 
-## Corporate concepts
+## Conceitos corporativos
 
-## Technical concepts
+## Conceitos técnicos
 
-## Mistakes
+## Erros
 
-## Decisions I made
+## Decisões que tomei
 
-## Evidence
+## Evidência
 
-## What I could explain in an interview
+## O que eu conseguiria explicar numa entrevista
 
-## What I need to practice
+## O que preciso praticar
 
-## Next challenge
+## Próximo desafio

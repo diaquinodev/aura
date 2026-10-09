@@ -1,27 +1,27 @@
-# 0006 Where the communication policy lives
+# 0006 Onde fica a política de comunicação
 
-**Status:** Accepted, operator review pending · **Owner:** Operator · **Date:** 2026-10-08
+**Status:** Aceita, revisão do operador pendente · **Owner:** Operador · **Data:** 2026-10-08
 
-## Context
+## Contexto
 
-The corporate communication policy must apply in every simulation interaction and survive beyond chat history. The operator suggested a Cursor Skill or a simulator-specific Rule. The repository has no `.cursor/rules/` and no project skills; `AGENTS.md` is already applied automatically.
+A política de comunicação corporativa precisa valer em toda interação da simulação e sobreviver além do histórico do chat. O operador sugeriu uma Skill do Cursor ou uma Rule específica do simulador. O repositório não tem `.cursor/rules/` nem skills de projeto; o `AGENTS.md` já é aplicado automaticamente.
 
-## Decision
+## Decisão
 
-Canonical policy and templates in `docs/process/COMMUNICATION.md`. `AGENTS.md` gets a short Communication section that points to it. No Cursor Rule and no Skill for now.
+Política canônica e templates em `docs/process/COMMUNICATION.md`. O `AGENTS.md` ganha uma seção curta de Comunicação que aponta para ele. Nenhuma Rule do Cursor e nenhuma Skill por enquanto.
 
-## Rationale
+## Justificativa
 
-- The policy has an always-on part (tone, term explanations, light corrections) and an on-demand part (templates). `AGENTS.md` already covers always-on; a linked doc covers on-demand.
-- `AGENTS.md` and Markdown docs work across tools (Cursor, Claude Code, Codex); `.mdc` rules and skills are tool-specific.
-- A human reads the same file the agent follows: the policy is also training material.
+- A política tem uma parte sempre ativa (tom, explicação de termos, correções leves) e uma parte sob demanda (templates). O `AGENTS.md` já cobre a parte sempre ativa; um doc linkado cobre a parte sob demanda.
+- O `AGENTS.md` e docs em Markdown funcionam entre ferramentas (Cursor, Claude Code, Codex); rules `.mdc` e skills são específicas de cada ferramenta.
+- Um humano lê o mesmo arquivo que o agente segue: a política também é material de treinamento.
 
-## Trade-offs and alternatives
+## Trade-offs e alternativas
 
-- **Cursor Rule (`.cursor/rules/*.mdc`, always applied):** guaranteed in context, but duplicates what `AGENTS.md` does and costs context in every request, including non-simulation work.
-- **Skill (`corporate-communication`):** loaded only when relevant, which saves context. But an agent may not load it during casual interaction, and the policy is meant to be always on.
-- **Accepted cost:** an agent must follow a link to see templates. If agents repeatedly skip it, revisit (candidate for `/correct`).
+- **Rule do Cursor (`.cursor/rules/*.mdc`, sempre aplicada):** garantida no contexto, mas duplica o que o `AGENTS.md` faz e consome contexto em toda requisição, inclusive em trabalho fora da simulação.
+- **Skill (`corporate-communication`):** carregada só quando relevante, o que economiza contexto. Mas um agente pode não carregá-la durante uma interação casual, e a política deve estar sempre ativa.
+- **Custo aceito:** um agente precisa seguir um link para ver os templates. Se os agentes pularem isso repetidamente, revisitar (candidato a `/correct`).
 
-## Impact
+## Impacto
 
-Future simulation features (meetings in Bootstrap 02, communication evals) reference `docs/process/COMMUNICATION.md` instead of redefining formats. Decision records now use the unified format in `brain/index.md`.
+Funcionalidades futuras da simulação (reuniões no Bootstrap 02, communication evals) referenciam `docs/process/COMMUNICATION.md` em vez de redefinir formatos. Os registros de decisão agora usam o formato unificado em `brain/index.md`.

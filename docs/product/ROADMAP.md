@@ -1,47 +1,47 @@
 # Roadmap
 
-Capability-based, no dates. A stage is done when its capability is demonstrated with evidence, not when time passes. Order may change; each change is recorded in `brain/decisions/`. The previous roadmap (healthcare direction) is recorded in decision 0007.
+Baseado em capacidades, sem datas. Um stage está concluído quando sua capacidade é demonstrada com evidências, não quando o tempo passa. A ordem pode mudar; cada mudança é registrada em `brain/decisions/`. O roadmap anterior (direção de saúde) está registrado na decisão 0007.
 
-| Stage | Name | Capability | Status |
+| Stage | Nome | Capacidade | Status |
 |---|---|---|---|
-| 0 | Foundation | Documentation, Git, learning system, pstack | Complete |
-| 1 | Engineering Core | Python + FastAPI service, tests, Git workflow | In progress |
-| 2 | Enterprise Simulation | Synthetic company, personas, Jira, meetings | Not started |
-| 3 | Data & Persistence | PostgreSQL, synthetic datasets, audit model | Not started |
-| 4 | Finance Workflow | Intelligent Accounts Payable workflow end to end | Not started |
-| 5 | External Integrations | Simulated ERP/APIs, webhooks | Not started |
-| 6 | Agentic Layer | Tools, agents, MCP, orchestration where justified | Not started |
-| 7 | Evals & Observability | Tracing, quality, latency, cost | Not started |
-| 8 | Reliability & Security | Incidents, guardrails, resilience | Not started |
-| 9 | Multi-Workflow Platform | Additional enterprise processes, after Stage 4 is complete | Not started |
-| 10 | Pilot Readiness | Assess whether a real pilot is legally, technically and ethically ready | Not started |
+| 0 | Foundation | Documentação, Git, sistema de aprendizado, pstack | COMPLETE |
+| 1 | Engineering Core | Serviço Python + FastAPI, testes, workflow de Git | Em andamento |
+| 2 | Enterprise Simulation | Empresa sintética, personas, Jira, reuniões | Não iniciado |
+| 3 | Data & Persistence | PostgreSQL, datasets sintéticos, modelo de auditoria | Não iniciado |
+| 4 | Finance Workflow | Workflow de Accounts Payable inteligente de ponta a ponta | Não iniciado |
+| 5 | External Integrations | ERP/APIs simulados, webhooks | Não iniciado |
+| 6 | Agentic Layer | Ferramentas, agentes, MCP, orquestração onde justificado | Não iniciado |
+| 7 | Evals & Observability | Tracing, qualidade, latência, custo | Não iniciado |
+| 8 | Reliability & Security | Incidentes, guardrails, resiliência | Não iniciado |
+| 9 | Multi-Workflow Platform | Processos corporativos adicionais, depois que o Stage 4 estiver completo | Não iniciado |
+| 10 | Pilot Readiness | Avaliar se um piloto real está pronto do ponto de vista legal, técnico e ético | Não iniciado |
 
-## Stage 0 exit criteria
+## Critérios de saída do Stage 0
 
-- [x] Canonical documentation exists and passes `python tools/check_docs.py`.
-- [x] Memory (`brain/`) and learning (`docs/learning/`) areas exist and are separated.
-- [x] Positioning is coherent after Pivot 01.
-- [x] Git initialized by the operator and first commit made.
-- [ ] Operator has reviewed and accepted (or changed) the decisions in `brain/decisions/`. Partially done (0007, 0008 decided); the rest is carried into Bootstrap 02 and does not block it.
+- [x] A documentação canônica existe e passa em `python tools/check_docs.py`.
+- [x] As áreas de memória (`brain/`) e de aprendizado (`docs/learning/`) existem e estão separadas.
+- [x] O posicionamento está coerente após o Pivot 01.
+- [x] Git inicializado pelo operador e primeiro commit feito.
+- [ ] O operador revisou e aceitou (ou alterou) as decisões em `brain/decisions/`. Parcialmente feito (0007 e 0008 decididas); o restante segue para o Bootstrap 02 e não o bloqueia.
 
-From Stage 1 on, a stage is complete only with executable evidence (hard rule in [../process/WORKING-MODEL.md](../process/WORKING-MODEL.md)).
+A partir do Stage 1, um stage só está completo com evidência executável (regra rígida em [../process/WORKING-MODEL.md](../process/WORKING-MODEL.md)).
 
-## Stage 1 definition of done
+## Definition of done do Stage 1
 
-- [x] Python project initialized
-- [x] FastAPI service running locally
-- [ ] Pydantic schemas for the invoice domain
-- [ ] Deterministic invoice validation
-- [ ] Deterministic 3-way match
-- [ ] Tests with pytest, including edge cases
-- [ ] Work done on a branch and merged through a pull request
-- [ ] CI running the tests on every PR
-- [ ] One small case study: **Case 001 — Deterministic 3-Way Matching Engine** (hypothesis: deterministic financial rules should be solved deterministically before any AI is introduced; must include problem, baseline, implementation, tests, edge cases, evidence)
+- [x] Projeto Python inicializado
+- [x] Serviço FastAPI rodando localmente
+- [ ] Schemas Pydantic para o domínio de faturas
+- [ ] Validação determinística de faturas
+- [ ] 3-way match determinístico
+- [ ] Testes com pytest, incluindo edge cases
+- [ ] Trabalho feito em uma branch e com merge via pull request
+- [ ] CI rodando os testes em todo PR
+- [ ] Um case study pequeno: **Case 001 — Deterministic 3-Way Matching Engine** (hipótese: regras financeiras determinísticas devem ser resolvidas de forma determinística antes de introduzir qualquer IA; deve incluir problema, baseline, implementação, testes, edge cases e evidências)
 
-## External validation path
+## Caminho de validação externa
 
 ```text
-Simulation → Internal demo → External reviewer → Real user feedback → Pilot
+Simulação → Demo interna → Revisor externo → Feedback de usuário real → Piloto
 ```
 
-A real client is not needed to start, but AURA must not stay indefinitely without external validation. Candidate reviewers: a finance analyst, an operations professional, a developer, a technical recruiter, a data professional. Not scheduled; first candidate checkpoint is after Stage 4.
+Não é necessário um cliente real para começar, mas a AURA não pode ficar indefinidamente sem validação externa. Revisores candidatos: um analista financeiro, um profissional de operações, um desenvolvedor, um recrutador técnico, um profissional de dados. Nada agendado; o primeiro checkpoint candidato é após o Stage 4.

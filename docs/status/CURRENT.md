@@ -1,29 +1,29 @@
-# Current status
+# Status atual
 
-Operational snapshot. Update at the end of every session that changes it. The README changes only on milestones. Evidence rules: [../process/WORKING-MODEL.md](../process/WORKING-MODEL.md).
+Retrato operacional. Atualize ao fim de toda sessão que o altere. O README muda apenas em marcos. Regras de evidência: [../process/WORKING-MODEL.md](../process/WORKING-MODEL.md).
 
-**Last updated:** 2026-10-09 (Bootstrap 02, first PR)
+**Última atualização:** 2026-10-09 (Bootstrap 02, primeiro PR)
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Current Stage | Stage 1 — Engineering Core: in progress |
-| Current Sprint | Sprint 1 (GitHub milestone): #1 skeleton, #2 CI, #3 schemas, #4 validation |
-| Current Feature | Service skeleton + CI (`feat/service-skeleton`, closes #1 and #2) |
-| Current Problem | Intelligent Accounts Payable, first slice: deterministic invoice validation and 3-way match ([../product/AURA-OPS.md](../product/AURA-OPS.md)) |
-| Current Baseline | None yet; no domain logic to measure |
-| Current Evidence | `GET /health` → 200 (pytest locally; real uvicorn run); CI result on the first PR |
-| Current Training Level | `TRAINING_LEVEL = 1` (Guided) |
-| Next Milestone | Stage 1 definition of done ([../product/ROADMAP.md](../product/ROADMAP.md)) |
+| Stage atual | Stage 1 — Engineering Core: em andamento |
+| Sprint atual | Sprint 1 (milestone do GitHub): #1 esqueleto, #2 CI, #3 schemas, #4 validação |
+| Feature atual | Esqueleto do serviço + CI (`feat/service-skeleton`, fecha #1 e #2) |
+| Problema atual | Accounts Payable inteligente, primeira fatia: validação determinística de faturas e 3-way match ([../product/AURA-OPS.md](../product/AURA-OPS.md)) |
+| Baseline atual | Nenhuma ainda; não há lógica de domínio para medir |
+| Evidência atual | `GET /health` → 200 (pytest local; execução real com uvicorn); resultado de CI no primeiro PR |
+| Nível de treinamento atual | `TRAINING_LEVEL = 1` (Guided) |
+| Próximo marco | Definition of done do Stage 1 ([../product/ROADMAP.md](../product/ROADMAP.md)) |
 
-## Current risks
+## Riscos atuais
 
-| Risk | Impact | Mitigation | Owner |
+| Risco | Impacto | Mitigação | Responsável |
 |---|---|---|---|
-| No dependency lockfile | CI may install newer versions than local | Accepted for now (decision 0009) | Engineering |
-| No GitHub Projects board | Sprint visible only as milestones | `gh auth refresh -s project`, then create the board | Operator |
-| `/setup-pstack` not run | pstack skills use default models | Run `/setup-pstack` | Operator |
-| Platform framing invites scope creep | Many half-built domains | "One real workflow first" (decision 0007) | Operator |
+| Sem lockfile de dependências | O CI pode instalar versões mais novas que as locais | Aceito por enquanto (decisão 0009) | Engineering |
+| Sem board no GitHub Projects | Sprint visível apenas como milestones | `gh auth refresh -s project`, depois criar o board | Operador |
+| `/setup-pstack` não executado | As skills do pstack usam os modelos padrão | Executar `/setup-pstack` | Operador |
+| O enquadramento como plataforma convida scope creep | Muitos domínios construídos pela metade | "Um workflow real primeiro" (decisão 0007) | Operador |
 
-## Pending operator decisions
+## Decisões pendentes do operador
 
-Review decisions 0001, 0002, 0006; repository-content language in 0005; price tolerance policy for #5 (refinement).
+Revisar as decisões 0001, 0002 e 0006; política de tolerância de preço para o #5 (refinement).

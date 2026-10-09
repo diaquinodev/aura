@@ -1,16 +1,16 @@
-# Learning path
+# Trilha de aprendizado
 
-Status scale: `NOT STARTED` → `LEARNING` → `PRACTICING` → `INDEPENDENT`.
+Escala de status: `NOT STARTED` → `LEARNING` → `PRACTICING` → `INDEPENDENT`.
 
-**Knowledge ≠ practical evidence.** A status does not move because a topic was studied, read in a tutorial, documented, or explained by the agent. It moves with proof of work: something the operator implemented, tested or shipped (a commit, test, PR, CI run, eval) and can explain. Example: FastAPI stays `NOT STARTED` until the operator has built an endpoint. Initial state is deliberately conservative.
+**Conhecimento ≠ evidência prática.** Um status não avança porque um tema foi estudado, lido num tutorial, documentado ou explicado pelo agente. Ele avança com proof of work: algo que o operador implementou, testou ou entregou (um commit, teste, PR, execução de CI, eval) e consegue explicar. Exemplo: FastAPI continua `NOT STARTED` até o operador construir um endpoint. O estado inicial é deliberadamente conservador.
 
-| Competency | Status | Evidence |
+| Competência | Status | Evidência |
 |---|---|---|
 | Software Engineering | NOT STARTED | — |
 | Python | NOT STARTED | — |
 | APIs | NOT STARTED | — |
 | Data | NOT STARTED | — |
-| Git | LEARNING | 2026-10-09: operator ran `git init`, configured identity and staged the baseline; first commit made after guided pre-commit review (`git status`, `git diff --cached --check`, staged-secrets check). Executed with guidance, so not yet PRACTICING. |
+| Git | LEARNING | 2026-10-09: o operador executou `git init`, configurou a identidade e fez o staging da baseline; primeiro commit feito após revisão guiada pré-commit (`git status`, `git diff --cached --check`, verificação de secrets no staging). Executado com orientação, portanto ainda não é PRACTICING. |
 | Testing | NOT STARTED | — |
 | CI/CD | NOT STARTED | — |
 | Architecture | NOT STARTED | — |
@@ -23,7 +23,7 @@ Status scale: `NOT STARTED` → `LEARNING` → `PRACTICING` → `INDEPENDENT`.
 | Business | NOT STARTED | — |
 | Communication | NOT STARTED | — |
 
-## First practice targets
+## Primeiros alvos de prática
 
-- **Git**: create the first branch and PR on your own (Bootstrap 02); explain what `.gitignore` protects.
-- **Business**: pick which hypothesis in `docs/company/COMPANY.md` to validate first and justify it.
+- **Git**: criar a primeira branch e o primeiro PR sozinho (Bootstrap 02); explicar o que o `.gitignore` protege.
+- **Business**: escolher qual hipótese em `docs/company/COMPANY.md` validar primeiro e justificar a escolha.

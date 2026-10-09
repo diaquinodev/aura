@@ -1,17 +1,17 @@
-# No-show rate as the first metric
+# Taxa de no-show como primeira métrica
 
 > **STATUS: SUPERSEDED**
 >
-> This insight belongs to the previous vertical-health positioning of AURA. The current product direction is Aura Ops — Enterprise Agentic Automation Platform.
+> Este insight pertence ao posicionamento anterior da AURA, vertical de saúde. A direção atual do produto é Aura Ops — Enterprise Agentic Automation Platform.
 >
-> Current source of truth: `docs/product/AURA-OPS.md`. The underlying lesson (pick one clear metric the business already understands to scope the first slice) still applies to Accounts Payable.
+> Fonte de verdade atual: `docs/product/AURA-OPS.md`. A lição subjacente (escolher uma métrica clara que o negócio já entende para definir o scope da primeira fatia) continua valendo para Accounts Payable.
 
-**Observation:** of the journey steps in `docs/product/AURA-FLOW.md`, confirmation, reminder and attendance tie directly to a number the owner already understands: empty slots.
+**Observação:** das etapas da jornada em `docs/product/AURA-FLOW.md`, confirmação, lembrete e comparecimento se ligam diretamente a um número que o dono já entende: horários vazios.
 
-**Why it matters:** a single clear metric makes the first product slice and the first simulation scenario easier to scope and to evaluate.
+**Por que importa:** uma única métrica clara facilita definir o scope e avaliar a primeira fatia do produto e o primeiro cenário da simulação.
 
-**Evidence:** none yet; reasoning only. Industry no-show figures have not been researched.
+**Evidência:** nenhuma ainda; apenas raciocínio. Os números de no-show do setor não foram pesquisados.
 
-**Possible impact:** Stage 2 scenarios and Stage 4 scope could be organized around confirmation and reminder first.
+**Impacto possível:** os cenários do Stage 2 e o scope do Stage 4 poderiam ser organizados começando por confirmação e lembrete.
 
-**Needs validation?** Yes. Hypothesis 1 in `docs/company/COMPANY.md`.
+**Precisa de validação?** Sim. Hipótese 1 em `docs/company/COMPANY.md`.

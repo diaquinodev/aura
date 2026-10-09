@@ -1,24 +1,24 @@
-# 0008 Synthetic tenant identifiers
+# 0008 Identificadores de tenants sintéticos
 
-**Status:** Accepted · **Owner:** Operator · **Date:** 2026-10-09 (Stage 0 closeout) · **Resolves:** inbox item "Nexa may collide with real companies"
+**Status:** Aceita · **Owner:** Operador · **Data:** 2026-10-09 (Stage 0 closeout) · **Resolve:** item do inbox "Nexa pode colidir com empresas reais"
 
-## Context
+## Contexto
 
-The first synthetic client was named "Nexa Group". "Nexa" is used by real companies, so a portfolio reader could mistake a simulated client for a real one.
+O primeiro cliente sintético se chamava "Nexa Group". "Nexa" é usado por empresas reais, então um leitor do portfólio poderia confundir um cliente simulado com um real.
 
-## Decision
+## Decisão
 
-Synthetic organizations use an explicitly synthetic ID, `AURA-SYN-NNN`, plus a descriptive display name. The first is `AURA-SYN-001 — Synthetic Finance Enterprise` (`simulation/AURA-SYN-001.md`).
+Organizações sintéticas usam um ID explicitamente sintético, `AURA-SYN-NNN`, mais um nome de exibição descritivo. A primeira é `AURA-SYN-001 — Synthetic Finance Enterprise` (`simulation/AURA-SYN-001.md`).
 
-## Rationale
+## Justificativa
 
-An ID cannot be mistaken for a brand and needs no trademark check. It also scales to future tenants and datasets.
+Um ID não pode ser confundido com uma marca e não precisa de verificação de marca registrada. Também escala para futuros tenants e datasets.
 
-## Trade-offs and alternatives
+## Trade-offs e alternativas
 
-- Invented brand-like name: more natural in role-play, but every name needs a collision check.
-- Accepted cost: "AURA-SYN-001" reads less naturally in simulated meetings; the display name is used in prose.
+- Nome inventado com cara de marca: mais natural no role-play, mas cada nome precisa de uma verificação de colisão.
+- Custo aceito: "AURA-SYN-001" soa menos natural em reuniões simuladas; o nome de exibição é usado no texto corrido.
 
-## Impact
+## Impacto
 
-All references to "Nexa Group" in current docs were replaced. Historical journals keep the original name.
+Todas as referências a "Nexa Group" nos docs atuais foram substituídas. Os journals históricos mantêm o nome original.

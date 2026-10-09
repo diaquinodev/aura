@@ -1,28 +1,28 @@
-# 0009 Python tooling and work management
+# 0009 Tooling Python e gestão do trabalho
 
-**Status:** Accepted · **Owner:** Operator · **Date:** 2026-10-09 (Bootstrap 02 kickoff)
+**Status:** Aceita · **Owner:** Operador · **Data:** 2026-10-09 (Bootstrap 02 kickoff)
 
-## Context
+## Contexto
 
-Stage 1 needs a Python environment, a dependency definition, a place for tickets and sprints, and a remote for PRs and CI.
+O Stage 1 precisa de um ambiente Python, uma definição de dependências, um lugar para tickets e sprints, e um remoto para PRs e CI.
 
-## Decision
+## Decisão
 
-- `venv` + `pip` + `pyproject.toml` (src layout, package `aura_ops`).
-- GitHub Issues for tickets, Milestones as sprints. GitHub Projects board deferred: the `gh` token lacks the `project` scope.
-- Private GitHub repository `diaquinodev/aura`; made public once there is proof of work worth showing.
-- GitHub Actions for CI. Jira deferred to when it adds something GitHub does not.
+- `venv` + `pip` + `pyproject.toml` (src layout, pacote `aura_ops`).
+- GitHub Issues para tickets, Milestones como sprints. Board do GitHub Projects adiado: o token do `gh` não tem o scope `project`.
+- Repositório privado no GitHub `diaquinodev/aura`; tornado público quando houver proof of work que valha a pena mostrar.
+- GitHub Actions para CI. Jira adiado até quando acrescentar algo que o GitHub não oferece.
 
-## Rationale
+## Justificativa
 
-All already installed or authenticated: zero new tools before the first line of code. Issues, PRs and CI in one place link tickets to evidence automatically (`Closes #N`).
+Tudo já está instalado ou autenticado: zero ferramentas novas antes da primeira linha de código. Issues, PRs e CI em um só lugar ligam tickets a evidências automaticamente (`Closes #N`).
 
-## Trade-offs and alternatives
+## Trade-offs e alternativas
 
-- `uv`: faster and has a lockfile, but needs installation; revisit if reproducibility becomes a problem.
-- Jira: closer to many enterprises, but needs an account and an integration to link with PRs.
-- Accepted cost: no lockfile, so CI may resolve newer dependency versions than local.
+- `uv`: mais rápido e tem lockfile, mas precisa ser instalado; revisitar se a reprodutibilidade virar um problema.
+- Jira: mais próximo de muitas empresas, mas precisa de uma conta e de uma integração para se ligar aos PRs.
+- Custo aceito: sem lockfile, então o CI pode resolver versões de dependências mais novas que as locais.
 
-## Impact
+## Impacto
 
-`.venv/` stays git-ignored. CI installs `pip install -e ".[dev]"` from `pyproject.toml`.
+`.venv/` continua ignorado pelo Git. O CI instala `pip install -e ".[dev]"` a partir do `pyproject.toml`.

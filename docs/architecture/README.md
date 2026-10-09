@@ -1,94 +1,73 @@
-# Architecture
+# Arquitetura
 
-Status: **principles only**. No component below exists yet. Technical design arrives with Stage 1 and later stages.
+Status: **princípios + esqueleto do serviço**. Só a API FastAPI com `GET /health` existe; o restante está PLANNED. O design técnico detalhado chega ao longo do Stage 1 e dos stages seguintes.
 
-## Conceptual overview
+## Visão conceitual
 
-```text
-Business User
-      ↓
-Aura Ops
-      ↓
-Agent / Workflow Layer
-      ↓
-Tools
- ┌────┼─────────┐
-ERP   DB   Documents
- └────┼─────────┘
-      ↓
-Business Rules
-      ↓
-Human Approval
-      ↓
-Action
-      ↓
-Audit + Observability
-```
+O diagrama de arquitetura vive em um único lugar, o [README](../../README.md), para não divergir. Ele marca o que está implementado e o que está planejado.
 
-Every layer is **PLANNED**.
+## Vocabulário de status
 
-## Status vocabulary
+Usado em toda a documentação para capacidades e componentes.
 
-Used across all documentation for capabilities and components.
-
-| Status | Meaning |
+| Status | Significado |
 |---|---|
-| PLANNED | Intended; nothing built |
-| IN DEVELOPMENT | Work started; not usable yet |
-| IMPLEMENTED | Built and runnable |
-| VERIFIED | Implemented and proven by a test, eval or reproducible evidence |
+| PLANNED | Pretendido; nada construído |
+| IN DEVELOPMENT | Trabalho iniciado; ainda não utilizável |
+| IMPLEMENTED | Construído e executável |
+| VERIFIED | Implementado e comprovado por teste, eval ou evidência reproduzível |
 
-## Principle 1: deterministic first, AI where uncertainty exists
+## Princípio 1: deterministic first, IA onde existe incerteza
 
-| Deterministic: code, SQL, schema, constraints, rules, tests | Probabilistic: may justify AI |
+| Determinístico: código, SQL, schema, constraints, regras, testes | Probabilístico: pode justificar IA |
 |---|---|
-| `invoice_total == expected_total` | Interpreting an unstructured document |
-| `purchase_order_exists` | Semantic classification (what kind of request is this?) |
-| Duplicate document detection | Retrieving relevant context |
-| Status transitions and validation | Assisted investigation of an exception |
-| Approval thresholds | Summaries and recommendations |
-| 3-way match within tolerance | Natural-language interface |
+| `invoice_total == expected_total` | Interpretar um documento não estruturado |
+| `purchase_order_exists` | Classificação semântica (que tipo de solicitação é esta?) |
+| Detecção de documentos duplicados | Recuperar contexto relevante |
+| Transições de status e validação | Investigação assistida de uma exception |
+| Limites de aprovação | Resumos e recomendações |
+| 3-way match dentro da tolerância | Interface em linguagem natural |
 
-If a step can be expressed as a rule, it is a rule. An LLM, agent, MCP server or RAG pipeline is introduced only where it handles real uncertainty, and that need is recorded as a decision.
+Se uma etapa pode ser expressa como regra, ela é uma regra. Um LLM, agente, servidor MCP ou pipeline de RAG só é introduzido onde lida com incerteza real, e essa necessidade é registrada como decisão.
 
-## Principle 2: human-in-the-loop for business actions
-
-```text
-Agent Recommendation → Policy → Human Approval → Action
-```
-
-- Agents **recommend**; they do not execute financial actions.
-- **Policy** (deterministic) decides who must approve, based on amount, supplier and risk.
-- Autonomy increases only with evidence (evals, audit history), per action type, recorded as a decision.
-
-## Principle 3: everything auditable
-
-Each business action records its inputs, rule results, AI outputs (with model and version), the decision, who made it, and when. If it is not in the audit log, it did not happen.
-
-## Principle 4: no technology without a problem
-
-No technology enters AURA because it is popular. RAG, MCP, agent frameworks, Redis, vector databases, orchestration, Kubernetes, Kafka or an observability platform need:
+## Princípio 2: human-in-the-loop para ações de negócio
 
 ```text
-PROBLEM → REQUIREMENT → ALTERNATIVES → DECISION → IMPLEMENTATION → EVIDENCE
+Recomendação do agente → Política → Aprovação humana → Ação
 ```
 
-recorded in `brain/decisions/`. Without a concrete problem it is rejected or deferred.
+- Agentes **recomendam**; eles não executam ações financeiras.
+- A **política** (determinística) decide quem precisa aprovar, com base em valor, fornecedor e risco.
+- A autonomia só aumenta com evidências (evals, histórico de auditoria), por tipo de ação, registrada como decisão.
 
-## Principle 5: agents last, and evaluated
+## Princípio 3: tudo auditável
+
+Cada ação de negócio registra suas entradas, os resultados das regras, as saídas da IA (com modelo e versão), a decisão, quem a tomou e quando. Se não está no log de auditoria, não aconteceu.
+
+## Princípio 4: nenhuma tecnologia sem problema
+
+Nenhuma tecnologia entra na AURA por ser popular. RAG, MCP, frameworks de agentes, Redis, bancos de dados vetoriais, orquestração, Kubernetes, Kafka ou uma plataforma de observabilidade precisam de:
 
 ```text
-Business Rules → Deterministic Engine → APIs → Data → Failure Cases → Agent Assistance
+PROBLEMA → REQUISITO → ALTERNATIVAS → DECISÃO → IMPLEMENTAÇÃO → EVIDÊNCIA
 ```
 
-No agent before a problem that needs one. Agents are **evaluated, not just demonstrated**: task success, tool errors, hallucinations, human escalations, latency, tokens, cost, safety failures. Each metric is added only when it can actually be measured.
+registrado em `brain/decisions/`. Sem um problema concreto, a tecnologia é rejeitada ou adiada.
+
+## Princípio 5: agentes por último, e avaliados
+
+```text
+Regras de negócio → Motor determinístico → APIs → Dados → Casos de falha → Assistência de agentes
+```
+
+Nenhum agente antes de um problema que precise de um. Agentes são **avaliados, não apenas demonstrados**: sucesso na tarefa, erros de ferramenta, alucinações, escalonamentos para humanos, latência, tokens, custo, falhas de segurança. Cada métrica só é adicionada quando pode de fato ser medida.
 
 ## Simulator (PLANNED)
 
-The simulator is more than training material. It is also:
+O simulador é mais do que material de treinamento. Ele também é:
 
-- **reproducible scenarios**: the same scenario runs against different versions of the solution;
-- **eval harness**: results are compared across versions (Scenario 001 → version A → result; Scenario 001 → version B → result);
-- **incident generator**: failures injected on purpose, reproducibly.
+- **cenários reproduzíveis**: o mesmo cenário roda contra diferentes versões da solução;
+- **eval harness**: os resultados são comparados entre versões (Cenário 001 → versão A → resultado; Cenário 001 → versão B → resultado);
+- **gerador de incidentes**: falhas injetadas de propósito, de forma reproduzível.
 
-Synthetic organizations such as `simulation/AURA-SYN-001.md` are its first input. All its results are SYNTHETIC.
+Organizações sintéticas como `simulation/AURA-SYN-001.md` são sua primeira entrada. Todos os seus resultados são SYNTHETIC.

@@ -1,26 +1,26 @@
-# Organization (conceptual)
+# Organização (conceitual)
 
-> These areas represent **business responsibilities**. They do **not** mean there is one AI agent per department. Agents are introduced only when there is a measurable benefit, recorded as a decision in `brain/decisions/`.
+> Estas áreas representam **responsabilidades de negócio**. Elas **não** significam que existe um agente de IA por departamento. Agentes são introduzidos apenas quando há benefício mensurável, registrado como decisão em `brain/decisions/`.
 
 ```text
 AURA
-├── Product            what to build and why
-├── Engineering        building and maintaining the software
-├── Quality            proving it works (tests, evals, acceptance)
-├── Platform           CI/CD, environments, security, observability
-├── Operations         incidents, on-call, runbooks
-└── Customer Success   onboarding, support, feedback from (simulated) customers
+├── Product            o que construir e por quê
+├── Engineering        construir e manter o software
+├── Quality            provar que funciona (testes, evals, aceite)
+├── Platform           CI/CD, ambientes, segurança, observabilidade
+├── Operations         incidentes, plantão, runbooks
+└── Customer Success   onboarding, suporte, feedback de clientes (simulados)
 ```
 
-| Area | Owns | Today |
+| Área | Responsável por | Hoje |
 |---|---|---|
-| Product | Problem definition, roadmap, prioritization | Operator, with AI guidance |
-| Engineering | Code, design, reviews | Operator, with AI assistance |
-| Quality | Test strategy, acceptance criteria | Not started |
-| Platform | Git, CI, environments, secrets | Not started (Git not initialized) |
-| Operations | Incidents and recovery | Not started (Stage 8) |
-| Customer Success | Simulated customer feedback (AURA-SYN-001) | Not started (Stage 2) |
+| Product | Definição do problema, roadmap, priorização | Operador, com orientação de IA |
+| Engineering | Código, design, reviews | Operador, com assistência de IA |
+| Quality | Estratégia de testes, critérios de aceite | Não iniciado |
+| Platform | Git, CI, ambientes, segredos | Não iniciado (Git não inicializado) |
+| Operations | Incidentes e recuperação | Não iniciado (Stage 8) |
+| Customer Success | Feedback de cliente simulado (AURA-SYN-001) | Não iniciado (Stage 2) |
 
-These are AURA's internal areas. The client-side stakeholders (Finance, Procurement, Compliance at AURA-SYN-001) are personas in [../../simulation/AURA-SYN-001.md](../../simulation/AURA-SYN-001.md).
+Estas são as áreas internas da AURA. Os stakeholders do lado do cliente (Finance, Procurement, Compliance na AURA-SYN-001) são personas em [../../simulation/AURA-SYN-001.md](../../simulation/AURA-SYN-001.md).
 
-In Stage 0 every role is played by the operator. The AI acts as mentor and assistant, not as a department.
+No Stage 0, todos os papéis são exercidos pelo operador. A IA atua como mentora e assistente, não como um departamento.

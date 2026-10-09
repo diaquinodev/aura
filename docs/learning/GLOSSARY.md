@@ -1,183 +1,183 @@
-# Glossary
+# Glossário
 
-Only relevant, recurring terms already used in the project. Grows with the project. Format: term, simple explanation, example at Aura, example in a real company.
+Apenas termos relevantes e recorrentes já usados no projeto. Cresce junto com o projeto. Formato: termo, explicação simples, exemplo na Aura, exemplo numa empresa real.
 
-## Engineering
+## Engenharia
 
 **Repository**
-A folder whose full history of changes is tracked by Git.
-*At Aura:* `d:\CURSOR-AGENTE`, once `git init` runs.
-*In a real company:* each product or service usually has its own repository on GitHub/GitLab.
+Uma pasta cujo histórico completo de alterações é rastreado pelo Git.
+*Na Aura:* `d:\CURSOR-AGENTE`, depois que o `git init` for executado.
+*Numa empresa real:* cada produto ou serviço costuma ter seu próprio repositório no GitHub/GitLab.
 
 **Branch**
-A parallel line of changes, so work can happen without touching the main version.
-*At Aura:* each Bootstrap or ticket will get its own branch once Git exists.
-*In a real company:* every ticket gets a branch like `feature/AUR-12-booking`; `main` stays deployable.
+Uma linha paralela de alterações, para que o trabalho aconteça sem mexer na versão principal.
+*Na Aura:* cada Bootstrap ou ticket terá sua própria branch assim que o Git existir.
+*Numa empresa real:* todo ticket ganha uma branch como `feature/AUR-12-booking`; a `main` continua pronta para deploy.
 
 **Commit**
-A saved snapshot of changes with a message explaining why.
-*At Aura:* the first commit will contain the Stage 0 foundation.
-*In a real company:* reviewers read commit messages to understand intent; `git blame` points back to them months later.
+Um snapshot salvo de alterações, com uma mensagem explicando o porquê.
+*Na Aura:* o primeiro commit vai conter a fundação do Stage 0.
+*Numa empresa real:* os revisores leem as mensagens de commit para entender a intenção; meses depois, o `git blame` aponta de volta para elas.
 
 **Pull Request (PR)**
-A request to merge a branch into `main`, where others review the change.
-*At Aura:* not used yet; planned once a remote and branch workflow exist.
-*In a real company:* no code reaches production without an approved PR and passing CI.
+Uma solicitação para fazer merge de uma branch na `main`, onde outras pessoas revisam a alteração.
+*Na Aura:* ainda não usado; planejado para quando existirem um remote e um workflow de branches.
+*Numa empresa real:* nenhum código chega à produção sem um PR aprovado e a CI passando.
 
 **CI (Continuous Integration)**
-Automated checks (tests, linters) that run on every change.
-*At Aura:* `tools/check_docs.py` is the first check that will run in CI (Stage 1).
-*In a real company:* a red CI blocks the merge, so broken code cannot reach `main`.
+Verificações automatizadas (testes, linters) executadas a cada alteração.
+*Na Aura:* o `tools/check_docs.py` é a primeira verificação que vai rodar na CI (Stage 1).
+*Numa empresa real:* uma CI vermelha bloqueia o merge, então código quebrado não chega à `main`.
 
 **Tenant**
-One customer organization in a shared (multi-tenant) system, isolated from the others.
-*At Aura:* each synthetic organization (first: AURA-SYN-001) will be a tenant.
-*In a real company:* Clinic A must never see Clinic B's appointments, even though both use the same database.
+Uma organização cliente num sistema compartilhado (multi-tenant), isolada das demais.
+*Na Aura:* cada organização sintética (a primeira: AURA-SYN-001) será um tenant.
+*Numa empresa real:* a Clínica A nunca pode ver os agendamentos da Clínica B, mesmo que ambas usem o mesmo banco de dados.
 
 **Observability**
-The ability to understand what a running system is doing from its logs, metrics and traces.
-*At Aura:* planned for Stage 7.
-*In a real company:* when a booking fails, a trace shows which step and which external call failed.
+A capacidade de entender o que um sistema em execução está fazendo a partir de seus logs, métricas e traces.
+*Na Aura:* planejado para o Stage 7.
+*Numa empresa real:* quando um agendamento falha, um trace mostra qual etapa e qual chamada externa falharam.
 
 **Proof of work**
-Evidence that lets someone else verify the work was done and understood: code, tests, PRs, CI runs, metrics, case studies.
-*At Aura:* from Stage 1, a milestone without it is not complete.
-*In a real company:* a promotion case cites shipped PRs and measured impact, not "familiar with Kafka".
+Evidência que permite a outra pessoa verificar que o trabalho foi feito e compreendido: código, testes, PRs, execuções de CI, métricas, case studies.
+*Na Aura:* a partir do Stage 1, um marco sem isso não está concluído.
+*Numa empresa real:* um pedido de promoção cita PRs entregues e impacto medido, não "familiarizado com Kafka".
 
 **Baseline**
-The measured value of something before a change, so the change can be compared against it.
-*At Aura:* duplicate count before and after a fix, labeled SYNTHETIC.
-*In a real company:* "p95 latency was 800 ms before the cache; 300 ms after."
+O valor medido de algo antes de uma alteração, para que a alteração possa ser comparada com ele.
+*Na Aura:* contagem de duplicatas antes e depois de uma correção, rotulada como SYNTHETIC.
+*Numa empresa real:* "a latência p95 era de 800 ms antes do cache; 300 ms depois."
 
-## AI agents
+## Agentes de IA
 
 **Agent**
-An AI model that can take actions with tools (read files, run commands), not just answer.
-*At Aura:* the Cursor agent that wrote Stage 0 under `AGENTS.md`.
-*In a real company:* an agent opens a PR fixing a lint error; a human reviews it.
+Um modelo de IA capaz de executar ações com ferramentas (ler arquivos, rodar comandos), não apenas responder.
+*Na Aura:* o agente do Cursor que escreveu o Stage 0 seguindo o `AGENTS.md`.
+*Numa empresa real:* um agente abre um PR corrigindo um erro de lint; uma pessoa o revisa.
 
 **Skill**
-A reusable written procedure an agent loads for a specific kind of task.
-*At Aura:* pstack skills such as `/how` and `/reflect`, used from the plugin.
-*In a real company:* a "release" skill tells the agent exactly which steps and checks a release needs.
+Um procedimento escrito e reutilizável que um agente carrega para um tipo específico de tarefa.
+*Na Aura:* skills do pstack como `/how` e `/reflect`, usadas a partir do plugin.
+*Numa empresa real:* uma skill de "release" diz ao agente exatamente quais etapas e verificações uma release exige.
 
 **Rule**
-Persistent instructions applied to an agent automatically.
-*At Aura:* `AGENTS.md`.
-*In a real company:* "never commit secrets" lives in a rule, so nobody has to repeat it.
+Instruções persistentes aplicadas automaticamente a um agente.
+*Na Aura:* `AGENTS.md`.
+*Numa empresa real:* "nunca faça commit de secrets" fica numa rule, para que ninguém precise repetir.
 
 **Hook**
-Code executed automatically when a specific event happens.
-*At Aura:* none yet.
-*In a real company:* a pre-commit hook blocks a commit that contains an API key.
+Código executado automaticamente quando um evento específico acontece.
+*Na Aura:* nenhum ainda.
+*Numa empresa real:* um hook de pre-commit bloqueia um commit que contém uma API key.
 
 **MCP (Model Context Protocol)**
-A standard way to connect an AI agent to external tools and data.
-*At Aura:* candidate for connecting Jira in Bootstrap 02.
-*In a real company:* the agent reads a Jira ticket through an MCP server instead of someone copy-pasting it.
+Um padrão para conectar um agente de IA a ferramentas e dados externos.
+*Na Aura:* candidato para conectar o Jira no Bootstrap 02.
+*Numa empresa real:* o agente lê um ticket do Jira por meio de um servidor MCP, em vez de alguém copiar e colar.
 
 **Eval**
-A repeatable test that measures how well an AI system (or a person's output) performs a task.
-*At Aura:* proposed communication evals (`brain/insights/communication-evals.md`).
-*In a real company:* 200 sample client messages run through the agent; the share of correct bookings is tracked per release.
+Um teste repetível que mede o quão bem um sistema de IA (ou o resultado de uma pessoa) executa uma tarefa.
+*Na Aura:* evals de comunicação propostas (`brain/insights/communication-evals.md`).
+*Numa empresa real:* 200 mensagens de clientes de amostra passam pelo agente; a proporção de agendamentos corretos é acompanhada a cada release.
 
-## Agile and delivery
+## Agile e entrega
 
 **Stakeholder**
-Anyone affected by or with influence over a piece of work.
-*At Aura:* AURA-SYN-001's Finance Manager (buyer), Finance Analysts (users), Compliance (can block), and the operator acting as Product.
-*In a real company:* before changing the booking flow, the PM aligns with Sales, Support and Engineering.
+Qualquer pessoa afetada por um trabalho ou com influência sobre ele.
+*Na Aura:* o Finance Manager da AURA-SYN-001 (comprador), os Finance Analysts (usuários), Compliance (pode bloquear) e o operador atuando como Product.
+*Numa empresa real:* antes de mudar o fluxo de agendamento, o PM se alinha com Vendas, Suporte e Engenharia.
 
 **Backlog**
-The ordered list of work not done yet.
-*At Aura:* will be created in Jira in Bootstrap 02.
-*In a real company:* the product manager keeps the most valuable items at the top.
+A lista ordenada do trabalho ainda não feito.
+*Na Aura:* será criado no Jira no Bootstrap 02.
+*Numa empresa real:* o product manager mantém os itens de maior valor no topo.
 
 **Epic**
-A large body of work split into many stories.
-*At Aura:* "3-way match" could be an epic.
-*In a real company:* "WhatsApp reminders" is an epic; "send reminder 24h before" is a story.
+Um grande bloco de trabalho dividido em várias stories.
+*Na Aura:* "3-way match" poderia ser um epic.
+*Numa empresa real:* "Lembretes por WhatsApp" é um epic; "enviar lembrete 24h antes" é uma story.
 
 **Story**
-A small piece of user-visible value with acceptance criteria.
-*At Aura:* "As a front desk, I want automatic confirmation so I don't message each client."
-*In a real company:* stories are sized to fit in one sprint.
+Uma pequena entrega de valor visível ao usuário, com critérios de aceite.
+*Na Aura:* "Como recepção, quero confirmação automática para não ter que mandar mensagem para cada cliente."
+*Numa empresa real:* as stories são dimensionadas para caber em uma sprint.
 
 **Acceptance criteria**
-The conditions that must be true for a story to be considered done, written before implementation.
-*At Aura:* "An invoice whose total differs from the PO by more than the tolerance is flagged as an exception and never auto-approved."
-*In a real company:* QA and the PM check the criteria before accepting the delivery.
+As condições que precisam ser verdadeiras para uma story ser considerada concluída, escritas antes da implementação.
+*Na Aura:* "Uma fatura cujo total difere do PO acima da tolerância é sinalizada como exception e nunca é aprovada automaticamente."
+*Numa empresa real:* QA e o PM verificam os critérios antes de aceitar a entrega.
 
 **Refinement**
-A session where the team clarifies scope, requirements and acceptance criteria before a ticket goes to implementation.
-*At Aura:* tickets will start as business symptoms and be refined before anyone proposes a solution.
-*In a real company:* a ticket is not "ready" for the sprint until it has been refined.
+Uma sessão em que o time esclarece escopo, requisitos e critérios de aceite antes de um ticket ir para implementação.
+*Na Aura:* os tickets vão começar como sintomas de negócio e ser refinados antes que alguém proponha uma solução.
+*Numa empresa real:* um ticket não está "pronto" para a sprint até passar por refinement.
 
 **Sprint**
-A fixed time box (often 2 weeks) in which the team commits to a set of backlog items.
-*At Aura:* introduced in Bootstrap 02.
-*In a real company:* sprint planning at the start, review and retrospective at the end.
+Um intervalo de tempo fixo (geralmente 2 semanas) em que o time se compromete com um conjunto de itens do backlog.
+*Na Aura:* apresentada no Bootstrap 02.
+*Numa empresa real:* sprint planning no início, review e retrospectiva no final.
 
 **Blocker**
-Something that prevents a task from moving forward until someone else acts.
-*At Aura:* "Blocked: Git is not initialized, so the branch workflow cannot start."
-*In a real company:* blockers are raised at the daily so someone can remove them the same day.
+Algo que impede uma tarefa de avançar até que outra pessoa aja.
+*Na Aura:* "Bloqueado: o Git não está inicializado, então o workflow de branches não pode começar."
+*Numa empresa real:* os blockers são levantados na daily para que alguém os remova no mesmo dia.
 
 **Trade-off**
-Gaining one property by accepting a cost in another; the basis of every technical decision.
-*At Aura:* decision 0006 trades guaranteed context (a Rule) for portability and lower context cost (a linked doc).
-*In a real company:* "Caching reduces latency but risks showing stale availability."
+Ganhar uma propriedade aceitando um custo em outra; a base de toda decisão técnica.
+*Na Aura:* a decisão 0006 troca contexto garantido (uma Rule) por portabilidade e menor custo de contexto (um doc linkado).
+*Numa empresa real:* "O cache reduz a latência, mas corre o risco de mostrar disponibilidade desatualizada."
 
 **Escalation**
-Bringing a decision or problem to the person who owns it, with context and a recommendation.
-*At Aura:* an engineer escalates to Product when a fix changes what clients see.
-*In a real company:* an on-call engineer escalates a P1 to the incident commander after 15 minutes without mitigation.
+Levar uma decisão ou um problema a quem é dono dele, com contexto e uma recomendação.
+*Na Aura:* um engenheiro escala para Product quando uma correção muda o que os clientes veem.
+*Numa empresa real:* um engenheiro de plantão escala um P1 para o incident commander após 15 minutos sem mitigação.
 
 ## Finance & Operations
 
 **Accounts Payable (AP)**
-The process of receiving, checking, approving and paying what a company owes its suppliers.
-*At Aura:* the first and only domain of Aura Ops.
-*In a real company:* an AP team processes thousands of supplier invoices a month and closes them before month-end.
+O processo de receber, conferir, aprovar e pagar o que uma empresa deve aos seus fornecedores.
+*Na Aura:* o primeiro e único domínio do Aura Ops.
+*Numa empresa real:* um time de AP processa milhares de faturas de fornecedores por mês e as fecha antes do fim do mês.
 
 **3-way match**
-A control that compares the purchase order, the goods receipt and the invoice before payment; a form of reconciliation.
-*At Aura:* step 7 of the reference workflow, fully deterministic.
-*In a real company:* if the invoice charges 100 units but only 90 were received, payment is held.
+Um controle que compara o pedido de compra, o recebimento da mercadoria e a fatura antes do pagamento; uma forma de conciliação.
+*Na Aura:* etapa 7 do workflow de referência, totalmente determinística.
+*Numa empresa real:* se a fatura cobra 100 unidades, mas só 90 foram recebidas, o pagamento fica retido.
 
 **Exception**
-A case that fails an automated check and needs investigation or a human decision.
-*At Aura:* where AI investigation adds value (step 9).
-*In a real company:* AP analysts spend most of their day working the exception queue, not the happy path.
+Um caso que falha numa verificação automatizada e precisa de investigação ou de uma decisão humana.
+*Na Aura:* onde a investigação por IA agrega valor (etapa 9).
+*Numa empresa real:* os analistas de AP passam a maior parte do dia trabalhando a fila de exceptions, não o caminho feliz.
 
 **Human-in-the-loop (HITL)**
-A design where a person reviews or approves before an automated decision takes effect.
-*At Aura:* agents recommend; an authorized person approves every financial action.
-*In a real company:* an AI flags a suspicious payment; a controller confirms before it is blocked.
+Um design em que uma pessoa revisa ou aprova antes que uma decisão automatizada tenha efeito.
+*Na Aura:* os agentes recomendam; uma pessoa autorizada aprova toda ação financeira.
+*Numa empresa real:* uma IA sinaliza um pagamento suspeito; um controller confirma antes de ele ser bloqueado.
 
 **SLA (Service Level Agreement)**
-A committed target for a service, such as response or processing time.
-*At Aura:* AURA-SYN-001's Finance Manager tracks the payment SLA.
-*In a real company:* "95% of approved invoices paid within supplier terms."
+Uma meta assumida para um serviço, como tempo de resposta ou de processamento.
+*Na Aura:* o Finance Manager da AURA-SYN-001 acompanha o SLA de pagamento.
+*Numa empresa real:* "95% das faturas aprovadas pagas dentro do prazo do fornecedor."
 
 **Audit trail**
-A complete, tamper-resistant record of who did what, when, and based on which data.
-*At Aura:* step 13; includes AI outputs and the model version that produced them.
-*In a real company:* external auditors sample payments and ask for the full trail of each.
+Um registro completo e resistente a adulteração de quem fez o quê, quando e com base em quais dados.
+*Na Aura:* etapa 13; inclui as saídas da IA e a versão do modelo que as produziu.
+*Numa empresa real:* auditores externos fazem amostragem de pagamentos e pedem o trail completo de cada um.
 
-## Operations
+## Operações
 
 **Incident**
-An unplanned event that degrades the service for users.
-*At Aura:* simulated in Stage 8; always labeled as simulated.
-*In a real company:* reminders stop sending; someone is paged, fixes it, and writes a postmortem.
+Um evento não planejado que degrada o serviço para os usuários.
+*Na Aura:* simulado no Stage 8; sempre rotulado como simulado.
+*Numa empresa real:* os lembretes param de ser enviados; alguém é acionado, corrige o problema e escreve um postmortem.
 
 **Severity**
-How bad an incident's impact is, usually P0/P1 (critical) to P3/P4 (minor). It drives response speed and who gets involved.
-*At Aura:* "P1: invoices cannot be submitted for approval."
-*In a real company:* a P1 pages on-call immediately; a P3 waits for business hours.
+O quão grave é o impacto de um incidente, geralmente de P0/P1 (crítico) a P3/P4 (menor). Define a velocidade de resposta e quem é envolvido.
+*Na Aura:* "P1: as faturas não podem ser enviadas para aprovação."
+*Numa empresa real:* um P1 aciona o plantão imediatamente; um P3 espera o horário comercial.
 
 **RCA (Root Cause Analysis)**
-A blameless written analysis after an incident: impact, timeline, root cause, and actions to prevent recurrence.
-*At Aura:* template in `docs/process/COMMUNICATION.md`.
-*In a real company:* RCAs are reviewed in a postmortem meeting and their action items tracked to completion.
+Uma análise escrita e sem culpados (blameless) após um incidente: impacto, linha do tempo, causa raiz e ações para evitar recorrência.
+*Na Aura:* template em `docs/process/COMMUNICATION.md`.
+*Numa empresa real:* as RCAs são revisadas numa reunião de postmortem e seus itens de ação acompanhados até a conclusão.

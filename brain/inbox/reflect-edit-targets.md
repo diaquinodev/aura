@@ -1,7 +1,7 @@
-# Where would `/reflect` write its edits?
+# Onde o `/reflect` gravaria suas edições?
 
-**Candidate concern (unvalidated):** pstack's `/reflect` is described as routing each learning "to a concrete edit on an existing skill". This repository has no skills of its own; the only installed skills live in the plugin cache (`~/.cursor/plugins/cache/cursor-public/pstack/<hash>/skills/`). Edits there would probably be lost when the plugin updates, and would apply to every project, not just Aura.
+**Preocupação candidata (não validada):** o `/reflect` do pstack é descrito como roteando cada aprendizado "para uma edição concreta em uma skill existente". Este repositório não tem skills próprias; as únicas skills instaladas ficam no cache do plugin (`~/.cursor/plugins/cache/cursor-public/pstack/<hash>/skills/`). Edições ali provavelmente seriam perdidas quando o plugin fosse atualizado, e valeriam para todos os projetos, não só para a Aura.
 
-**To validate:** on the first real `/reflect` run, check which file it proposes to change before accepting.
+**Para validar:** na primeira execução real do `/reflect`, verificar qual arquivo ele propõe alterar antes de aceitar.
 
-**If confirmed:** promote to `brain/gotchas/` and decide whether project-specific workflow lessons belong in `AGENTS.md` or in a project skill instead.
+**Se confirmado:** promover para `brain/gotchas/` e decidir se lições de workflow específicas do projeto pertencem ao `AGENTS.md` ou a uma skill de projeto.
