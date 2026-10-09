@@ -1,17 +1,17 @@
 Closes #
 
-## Why
+## Por quê
 
-## What
+## O quê
 
-## How verified
+## Como foi verificado
 
-## Metrics
+## Métricas
 
-<!-- Baseline vs result, labeled SYNTHETIC or REAL. "None" if not applicable. -->
+<!-- Baseline vs resultado, com rótulo SYNTHETIC ou REAL. "Nenhuma" se não se aplica. -->
 
-## Risks
+## Riscos
 
-## Not verified
+## Não verificado
 
 ## Follow-ups

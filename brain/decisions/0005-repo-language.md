@@ -1,26 +1,29 @@
-# 0005 Repository language
+# 0005 Idioma do repositório
 
-**Status:** Partially decided · **Owner:** Operator · **Date:** 2026-10-08
+**Status:** Aceita · **Owner:** Operador · **Data:** 2026-10-08 (proposta), 2026-10-09 (decidida)
 
-> **Update 2026-10-09:** the operator decided that all text output to the operator (chat, reports, explanations) is in Brazilian Portuguese. Repository content language is still proposed (English).
+## Contexto
 
-## Context
+O operador trabalha em português. O repositório também é portfólio, e a maior parte das ferramentas e da documentação do mercado está em inglês.
 
-The operator works in Portuguese. The repository is also a portfolio, and most of the tooling and industry documentation is in English.
+## Decisão
 
-## Decision
+- **Português do Brasil:** todo o conteúdo — README, `docs/`, `brain/`, `AGENTS.md`, issues, PRs, template de PR — e toda a saída para o operador.
+- **Inglês:** código, identificadores, nomes de arquivos e mensagens de commit (Conventional Commits).
+- Termos que o mercado usa em inglês (stakeholder, blocker, backlog, trade-off, baseline, proof of work) continuam em inglês, como define `docs/process/COMMUNICATION.md`.
 
-Repository content (docs, code, commits) in English; conversation and explanations in Portuguese.
+Proposta original (2026-10-08), substituída por esta: conteúdo do repositório em inglês e conversa em português.
 
-## Rationale
+## Justificativa
 
-English docs reach a wider audience of reviewers and employers and match the vocabulary of the tools. Explanations in Portuguese keep learning efficient.
+Um único idioma de conteúdo evita mistura e manutenção duplicada. O operador lê, revisa e defende o material com mais precisão na própria língua. Código e commits em inglês seguem a convenção do mercado e das ferramentas.
 
-## Trade-offs and alternatives
+## Trade-offs e alternativas
 
-- Everything in Portuguese: easier to write, smaller audience.
-- Bilingual docs: doubles maintenance; translations drift.
+- Conteúdo em inglês: público maior, mas o operador revisaria e aprenderia num idioma secundário.
+- Docs bilíngues: dobra a manutenção; as traduções divergem.
+- Custo aceito: revisores que não leem português têm acesso só ao código e aos commits.
 
-## Impact
+## Impacto
 
-The journal could be an exception (personal record). If the operator prefers Portuguese, switch before content grows.
+Todo o conteúdo existente foi traduzido em 2026-10-09. Os journals foram traduzidos sem alterar os fatos registrados.
