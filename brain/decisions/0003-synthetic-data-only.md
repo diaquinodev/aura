@@ -1,25 +1,25 @@
-# 0003 Synthetic data only
+# 0003 Apenas dados sintéticos
 
-**Status:** Accepted · **Owner:** Operator · **Date:** 2026-10-08 (Bootstrap 01)
+**Status:** Aceita · **Owner:** Operador · **Data:** 2026-10-08 (Bootstrap 01)
 
-> **Update 2026-10-09 (decision 0007):** the domain changed from health-adjacent businesses to enterprise Finance & Operations. The decision still holds: real invoices, supplier and payment data are personal and confidential (LGPD still applies to personal data), so all organizations, documents and transactions remain synthetic. Pilot readiness is now Stage 10 and synthetic datasets are Stage 3. The original text below is kept as written.
+> **Atualização 2026-10-09 (decisão 0007):** o domínio mudou de negócios ligados à saúde para Finance & Operations corporativo. A decisão continua válida: faturas, dados de fornecedores e de pagamentos reais são pessoais e confidenciais (a LGPD continua se aplicando a dados pessoais), então todas as organizações, documentos e transações continuam sintéticos. A prontidão para piloto agora é o Stage 10, e os datasets sintéticos são o Stage 3. O texto original abaixo foi mantido como escrito.
 
-## Context
+## Contexto
 
-Target segments (dermatology, dentistry, aesthetics) are health-adjacent. Real client data would bring legal obligations (for example LGPD) the project cannot meet yet, and a portfolio that blurs simulation and reality loses credibility.
+Os segmentos-alvo (dermatologia, odontologia, estética) são ligados à saúde. Dados reais de clientes trariam obrigações legais (por exemplo, a LGPD) que o projeto ainda não consegue cumprir, e um portfólio que confunde simulação e realidade perde credibilidade.
 
-## Decision
+## Decisão
 
-All customers, people and metrics are fictional until a pilot is explicitly approved in Stage 9. No clinical data, diagnosis or medical records at any stage currently planned.
+Todos os clientes, pessoas e métricas são fictícios até que um piloto seja explicitamente aprovado no Stage 9. Nenhum dado clínico, diagnóstico ou prontuário médico em nenhum estágio planejado atualmente.
 
-## Rationale
+## Justificativa
 
-Removes legal risk and keeps the portfolio honest.
+Elimina o risco legal e mantém o portfólio honesto.
 
-## Trade-offs and alternatives
+## Trade-offs e alternativas
 
-Use anonymized real data: still risky to collect and anonymize correctly; no benefit at this stage.
+Usar dados reais anonimizados: ainda é arriscado coletar e anonimizar corretamente; nenhum benefício nesta fase.
 
-## Impact
+## Impacto
 
-Stage 2 must produce synthetic data realistic enough to exercise the product. `.gitignore` excludes local database files and `data/local/`.
+O Stage 2 precisa produzir dados sintéticos realistas o bastante para exercitar o produto. O `.gitignore` exclui arquivos de banco de dados locais e `data/local/`.

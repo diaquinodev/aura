@@ -1,38 +1,111 @@
 # AURA
 
-> "AURA" and "Aura Ops" are working codenames. Trademark availability has not been checked.
+> "AURA" e "Aura Ops" são codinomes de trabalho. A disponibilidade das marcas não foi verificada.
 
-## What is AURA?
+## O que é a AURA?
 
-AURA is an enterprise agentic automation engineering lab designed to build, test and operate AI agents across realistic business workflows, using synthetic organizations, reproducible incidents and real software engineering practices.
+A AURA é um laboratório de engenharia de automação agentic empresarial, criado para construir, testar e operar agentes de IA em workflows corporativos realistas, usando organizações sintéticas, incidentes reproduzíveis e práticas reais de engenharia de software.
 
-Inside the simulation, AURA is a fictional B2B company building **Aura Ops**: auditable automation of enterprise processes combining AI agents, APIs, data, business rules and human approval.
+Dentro da simulação, a AURA é uma empresa B2B fictícia que constrói o **Aura Ops**: automação auditável de processos empresariais que combina agentes de IA, APIs, dados, regras de negócio e aprovação humana.
 
-## Business Problem
+## Problema de negócio
 
-Accounts Payable teams receive invoices that must be validated, matched against purchase orders and receipts, investigated when they diverge, approved and audited, mostly by hand. AURA's first workflow, **Intelligent Accounts Payable**, automates the deterministic parts with code and uses AI only where real uncertainty exists, with a human approving every financial action. Details: [docs/product/AURA-OPS.md](docs/product/AURA-OPS.md).
+Times de Accounts Payable recebem faturas que precisam ser validadas, conferidas contra pedidos de compra e recebimentos, investigadas quando divergem, aprovadas e auditadas — quase sempre à mão. O primeiro workflow da AURA, o **Accounts Payable inteligente**, automatiza com código as partes determinísticas e usa IA só onde existe incerteza real, com um humano aprovando toda ação financeira. Detalhes: [docs/product/AURA-OPS.md](docs/product/AURA-OPS.md).
 
-## Architecture
+## Arquitetura
 
-Business user → Aura Ops → agent/workflow layer → tools (ERP, database, documents) → business rules → human approval → action → audit and observability. Principles: deterministic first, human-in-the-loop, everything auditable, no technology without a problem. See [docs/architecture/README.md](docs/architecture/README.md).
+```mermaid
+flowchart TD
+    USER["Usuário de negócio<br/>Finance Analyst · Finance Manager"]
+    API["Aura Ops API · FastAPI<br/>hoje: só /health"]
+    WF["Orquestração do workflow"]
 
-## Current Capabilities
+    subgraph DET["Núcleo determinístico"]
+        VAL["Validação de dados"]
+        MATCH["Regras de negócio<br/>+ 3-way match"]
+    end
+
+    subgraph IA["IA — só onde existe incerteza"]
+        PARSE["Leitura de documentos"]
+        INV["Investigação de exceptions<br/>+ recomendação"]
+    end
+
+    subgraph DADOS["Sistemas e dados"]
+        ERP[("ERP simulado")]
+        DB[("PostgreSQL")]
+    end
+
+    HUMAN{"Aprovação humana"}
+    ACTION["Ação de negócio<br/>registrar · pagar · notificar"]
+    AUDIT[("Audit trail")]
+    OBS["Observabilidade + evals"]
+
+    USER --> API --> WF
+    WF --> PARSE --> VAL
+    WF --> VAL --> MATCH
+    VAL -.-> ERP
+    MATCH -.-> ERP
+    MATCH -- "divergência" --> INV
+    MATCH -- "match ok" --> HUMAN
+    INV --> HUMAN
+    HUMAN -- "aprovado" --> ACTION
+    ACTION --> DB
+    HUMAN --> AUDIT
+    ACTION --> AUDIT
+    AUDIT --> OBS
+
+    classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
+    classDef planned fill:#f3f4f6,stroke:#9ca3af,color:#374151,stroke-dasharray:4 3
+    class API done
+    class USER,WF,VAL,MATCH,PARSE,INV,ERP,DB,HUMAN,ACTION,AUDIT,OBS planned
+```
+
+Verde: implementado. Cinza tracejado: planejado.
+
+Princípios: deterministic first (totais, matches e duplicidades são código e SQL), human-in-the-loop para ações financeiras, tudo auditável e nenhuma tecnologia sem problema. Detalhes: [docs/architecture/README.md](docs/architecture/README.md).
+
+## Como o projeto produz trabalho
+
+Cada mudança percorre o mesmo caminho de uma empresa de tecnologia, e cada etapa deixa evidência verificável.
+
+```mermaid
+flowchart LR
+    EV["Evento de negócio<br/>AURA-SYN-001"] --> ISSUE["Issue"]
+    ISSUE --> BR["Branch"]
+    BR --> CODE["Código + testes"]
+    CODE --> PR["Pull request"]
+    PR --> CI{"CI<br/>pytest + check_docs"}
+    CI -- "falhou" --> CODE
+    CI -- "passou" --> REV["Review + merge<br/>operador"]
+    REV --> MAIN["main<br/>baseline estável"]
+    MAIN --> EVID["Evidência<br/>SYNTHETIC / REAL"]
+    EVID --> CASE["Case study"]
+
+    classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
+    classDef planned fill:#f3f4f6,stroke:#9ca3af,color:#374151,stroke-dasharray:4 3
+    class ISSUE,BR,CODE,PR,CI,REV,MAIN done
+    class EV,EVID,CASE planned
+```
+
+Hoje os eventos de negócio são escritos à mão a partir das personas; o simulador que os gera de forma reproduzível está planejado.
+
+## Capabilities atuais
 
 ```text
-Current stage:       Stage 1 — Engineering Core (in progress)
-Executable product:  Service skeleton only; no Accounts Payable logic yet
+Stage atual:         Stage 1 — Engineering Core (em andamento)
+Produto executável:  só o esqueleto do serviço; ainda sem lógica de Accounts Payable
 ```
 
 | Capability | Status |
 |---|---|
-| Documentation, decision log and memory system | IMPLEMENTED |
-| `tools/check_docs.py` (broken links, training-level consistency) | VERIFIED |
-| FastAPI service skeleton (`GET /health`) | VERIFIED (pytest, CI) |
-| CI on every pull request (pytest + doc checks) | IMPLEMENTED |
+| Documentação, decision log e sistema de memória | IMPLEMENTED |
+| `tools/check_docs.py` (links quebrados, consistência do nível de treinamento) | VERIFIED |
+| Esqueleto do serviço FastAPI (`GET /health`) | VERIFIED (pytest, CI) |
+| CI em todo pull request (pytest + checagem de docs) | VERIFIED (PR #7) |
 
-Everything else (invoice validation, 3-way match, PostgreSQL, agents, evals) is PLANNED.
+Todo o resto (validação de faturas, 3-way match, PostgreSQL, agentes, evals) está PLANNED. Ordem e definition of done: [docs/product/ROADMAP.md](docs/product/ROADMAP.md).
 
-### Run locally
+### Rodar localmente
 
 ```powershell
 python -m venv .venv
@@ -41,31 +114,31 @@ python -m venv .venv
 .\.venv\Scripts\python -m uvicorn aura_ops.main:app
 ```
 
-Then open `http://127.0.0.1:8000/health`. Order and definition of done: [docs/product/ROADMAP.md](docs/product/ROADMAP.md).
+Depois abra `http://127.0.0.1:8000/health`.
 
 ## Proof
 
-None yet beyond the documentation system. From Stage 1, each capability links here to its tests, PR, CI run and metrics, labeled SYNTHETIC or REAL.
+Por enquanto, só o sistema de documentação e o esqueleto do serviço. A partir do Stage 1, cada capability aponta aqui para seus testes, PR, execução de CI e métricas, com rótulo SYNTHETIC ou REAL.
 
 ## Demo
 
-None yet.
+Nenhuma ainda.
 
-## Case Studies
+## Case studies
 
-None yet. First planned: Case 001 — Deterministic 3-Way Matching Engine.
+Nenhum ainda. Primeiro planejado: Case 001 — Deterministic 3-Way Matching Engine.
 
-## Documentation
+## Documentação
 
-- [docs/status/CURRENT.md](docs/status/CURRENT.md): where the project is right now.
-- [docs/README.md](docs/README.md): map of the canonical documentation.
-- [AGENTS.md](AGENTS.md): rules for AI agents working in this repository.
-- [brain/index.md](brain/index.md): decisions, insights and gotchas.
-- Learning lab: the operator trains inside the simulated company; `TRAINING_LEVEL = 1` (Guided), see [docs/learning/README.md](docs/learning/README.md).
+- [docs/status/CURRENT.md](docs/status/CURRENT.md): onde o projeto está agora.
+- [docs/README.md](docs/README.md): mapa da documentação canônica.
+- [AGENTS.md](AGENTS.md): regras para os agentes de IA que trabalham neste repositório.
+- [brain/index.md](brain/index.md): decisões, insights e gotchas.
+- Laboratório de aprendizado: o operador treina dentro da empresa simulada; `TRAINING_LEVEL = 1` (Guided), ver [docs/learning/README.md](docs/learning/README.md).
 
 ## Disclaimer
 
-- **Synthetic clients.** AURA-SYN-001 and every other customer are fictional.
-- **Synthetic datasets and business events.** No real invoice, supplier, payment or personal data; incidents and requests are simulated.
-- **Real engineering.** The code, tests and infrastructure, once built, are real.
-- Every metric is labeled SYNTHETIC or REAL. Synthetic results are never commercial results.
+- **Clientes sintéticos.** A AURA-SYN-001 e qualquer outro cliente são fictícios.
+- **Datasets e eventos de negócio sintéticos.** Nenhum dado real de fatura, fornecedor, pagamento ou pessoa; incidentes e solicitações são simulados.
+- **Engenharia real.** O código, os testes e a infraestrutura são reais.
+- Toda métrica tem rótulo SYNTHETIC ou REAL. Resultado sintético nunca é resultado comercial.

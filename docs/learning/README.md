@@ -1,26 +1,26 @@
-# Learning
+# Aprendizado
 
-This area tracks the **operator's professional development**. Project memory (what the project knows) lives in [../../brain/index.md](../../brain/index.md), not here.
+Esta área acompanha o **desenvolvimento profissional do operador**. A memória do projeto (o que o projeto sabe) fica em [../../brain/index.md](../../brain/index.md), não aqui.
 
-Example of the split:
+Exemplo da separação:
 
-- `brain/gotchas/github-readme-precedence.md` records a project fact: GitHub shows `.github/README.md` instead of the root README.
-- [GLOSSARY.md](GLOSSARY.md) explains a concept: what a repository is.
+- `brain/gotchas/github-readme-precedence.md` registra um fato do projeto: o GitHub exibe `.github/README.md` no lugar do README da raiz.
+- [GLOSSARY.md](GLOSSARY.md) explica um conceito: o que é um repositório.
 
-## Training level
+## Nível de treinamento
 
 `TRAINING_LEVEL = 1`
 
-| Level | Name | AI does | Operator does |
+| Nível | Nome | A IA faz | O operador faz |
 |---|---|---|---|
-| 1 | Guided | Explains, presents options, shows risks, structures reasoning | Makes important decisions with support |
-| 2 | Assisted | Gives context, does mechanical tasks, reviews, questions decisions | Prioritizes, investigates, decides architecture, implements critical parts |
-| 3 | Professional | Provides ticket, business context, tools, evidence | Works as a real team member |
+| 1 | Guided | Explica, apresenta opções, mostra riscos, estrutura o raciocínio | Toma decisões importantes com apoio |
+| 2 | Assisted | Dá contexto, executa tarefas mecânicas, revisa, questiona decisões | Prioriza, investiga, decide a arquitetura, implementa as partes críticas |
+| 3 | Professional | Fornece ticket, contexto de negócio, ferramentas, evidência | Atua como um membro real do time |
 
-The level changes only by the operator's decision, recorded in `brain/decisions/`, with proof of work from [LEARNING-PATH.md](LEARNING-PATH.md). Moving from Guided to Assisted requires growing, demonstrated ability to interpret tickets, prioritize, implement, test and explain decisions; reading about them is not enough. When it changes, update the `TRAINING_LEVEL` line here, in [../../README.md](../../README.md) and in [../../AGENTS.md](../../AGENTS.md); `tools/check_docs.py` fails if they disagree.
+O nível muda somente por decisão do operador, registrada em `brain/decisions/`, com proof of work do [LEARNING-PATH.md](LEARNING-PATH.md). Passar de Guided para Assisted exige capacidade crescente e demonstrada de interpretar tickets, priorizar, implementar, testar e explicar decisões; ler sobre isso não basta. Quando o nível mudar, atualize a linha `TRAINING_LEVEL` aqui, no [../../README.md](../../README.md) e no [../../AGENTS.md](../../AGENTS.md); o `tools/check_docs.py` falha se eles divergirem.
 
-## Files
+## Arquivos
 
-- [LEARNING-PATH.md](LEARNING-PATH.md): competencies and their status.
-- [GLOSSARY.md](GLOSSARY.md): concepts used so far.
-- `journal/`: one entry per meaningful session, using [journal/_TEMPLATE.md](journal/_TEMPLATE.md).
+- [LEARNING-PATH.md](LEARNING-PATH.md): competências e seus status.
+- [GLOSSARY.md](GLOSSARY.md): conceitos usados até agora.
+- `journal/`: uma entrada por sessão relevante, usando [journal/_TEMPLATE.md](journal/_TEMPLATE.md).

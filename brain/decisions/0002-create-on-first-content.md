@@ -1,25 +1,25 @@
-# 0002 Create directories on first content
+# 0002 Criar diretórios no primeiro conteúdo
 
-**Status:** Accepted, operator review pending · **Owner:** Operator · **Date:** 2026-10-08 (Bootstrap 01)
+**Status:** Aceita, revisão do operador pendente · **Owner:** Operador · **Data:** 2026-10-08 (Bootstrap 01)
 
-> **Update 2026-10-09 (Pivot 01):** `docs/architecture/` and `simulation/` were created once they had real content (architecture principles; the first synthetic organization). `brain/investigations/` and `.github/` remain deferred.
+> **Atualização 2026-10-09 (Pivot 01):** `docs/architecture/` e `simulation/` foram criados assim que tiveram conteúdo real (princípios de arquitetura; a primeira organização sintética). `brain/investigations/` e `.github/` continuam adiados.
 
-## Context
+## Contexto
 
-The Bootstrap 01 brief proposed `simulation/`, `docs/architecture/`, `.github/README.md` and several empty `brain/` subfolders. None had content yet.
+O brief do Bootstrap 01 propunha `simulation/`, `docs/architecture/`, `.github/README.md` e várias subpastas vazias em `brain/`. Nenhuma tinha conteúdo ainda.
 
-## Decision
+## Decisão
 
-Create a directory or document only when it receives real content. Deferred: `simulation/` (Stage 2), `docs/architecture/` (first architecture decision), `brain/investigations/` (first investigation), `.github/` (first workflow, Stage 3). No `.gitkeep` files.
+Criar um diretório ou documento apenas quando ele receber conteúdo real. Adiados: `simulation/` (Stage 2), `docs/architecture/` (primeira decisão de arquitetura), `brain/investigations/` (primeira investigação), `.github/` (primeiro workflow, Stage 3). Sem arquivos `.gitkeep`.
 
-## Rationale
+## Justificativa
 
-Empty structure looks like progress but tells a new engineer nothing, and placeholder files go stale. `.github/README.md` would also replace the root README on GitHub (see `brain/gotchas/github-readme-precedence.md`).
+Estrutura vazia parece progresso, mas não diz nada a um engenheiro novo, e arquivos placeholder ficam desatualizados. Além disso, `.github/README.md` substituiria o README da raiz no GitHub (ver `brain/gotchas/github-readme-precedence.md`).
 
-## Trade-offs and alternatives
+## Trade-offs e alternativas
 
-Create the full tree with `.gitkeep`: shows intent, but adds files with no information.
+Criar a árvore completa com `.gitkeep`: mostra a intenção, mas adiciona arquivos sem nenhuma informação.
 
-## Impact
+## Impacto
 
-The planned locations are listed in `docs/README.md` and `brain/index.md` so nobody invents a different place for them.
+Os locais planejados estão listados em `docs/README.md` e `brain/index.md` para que ninguém invente um lugar diferente para eles.

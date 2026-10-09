@@ -6,57 +6,57 @@ ID:            AURA-SYN-001
 DISPLAY NAME:  Synthetic Finance Enterprise
 ```
 
-This organization is fictional and does not represent any real company. Identifier convention: decision 0008.
+Esta organização é fictícia e não representa nenhuma empresa real. Convenção de identificadores: decisão 0008.
 
-## Profile
+## Perfil
 
-- Mid-to-large company with multiple business units.
-- Departments relevant to Aura: Finance, Procurement, Operations, Customer Service, Compliance.
-- Processes a high volume of supplier invoices monthly; exact volume **TBD** when synthetic datasets are created (Stage 3).
-- Uses an ERP (simulated in Stage 5) as the system of record for suppliers, purchase orders and payments.
+- Empresa de médio a grande porte, com várias unidades de negócio.
+- Departamentos relevantes para a Aura: Finanças, Compras, Operações, Atendimento ao Cliente, Compliance.
+- Processa um alto volume mensal de faturas de fornecedores; o volume exato é **TBD** até a criação dos datasets sintéticos (Stage 3).
+- Usa um ERP (simulado no Stage 5) como sistema de registro de fornecedores, pedidos de compra e pagamentos.
 
 ## Personas
 
-No agents. These are business stakeholders who generate requests, decisions and feedback in the simulation.
+Nenhum agente. Estes são stakeholders de negócio que geram solicitações, decisões e feedback na simulação.
 
 ### Finance Analyst
-- **Goals:** process invoices correctly and on time; clear the exception queue.
-- **Pain points:** re-keying data, chasing divergences by email, month-end backlog.
-- **Technical knowledge:** spreadsheets, ERP screens; no programming.
-- **Decision authority:** approves within a low threshold; escalates above it.
-- **Typical requests:** "Why is this invoice stuck?" / "Can the system catch duplicates?"
+- **Objetivos:** processar faturas corretamente e no prazo; zerar a fila de exceptions.
+- **Dores:** redigitar dados, correr atrás de divergências por e-mail, backlog de fechamento do mês.
+- **Conhecimento técnico:** planilhas, telas do ERP; não programa.
+- **Autoridade de decisão:** aprova dentro de um limite baixo; escala acima dele.
+- **Pedidos típicos:** "Por que esta fatura está travada?" / "O sistema consegue pegar duplicidades?"
 
 ### Finance Manager
-- **Goals:** meet payment SLAs, control risk, report KPIs to leadership.
-- **Pain points:** no visibility into the queue; late-payment penalties; audit findings.
-- **Technical knowledge:** business intelligence dashboards.
-- **Decision authority:** high-value approvals; sets approval policy with Compliance.
-- **Typical requests:** "What is our exception rate this month?" / "Who approved this payment?"
+- **Objetivos:** cumprir os SLAs de pagamento, controlar o risco, reportar KPIs à liderança.
+- **Dores:** nenhuma visibilidade da fila; multas por atraso de pagamento; apontamentos de auditoria.
+- **Conhecimento técnico:** dashboards de business intelligence.
+- **Autoridade de decisão:** aprovações de alto valor; define a política de aprovação junto com Compliance.
+- **Pedidos típicos:** "Qual é a nossa taxa de exceptions este mês?" / "Quem aprovou este pagamento?"
 
 ### Procurement Analyst
-- **Goals:** accurate purchase orders and healthy supplier relationships.
-- **Pain points:** invoices that do not match the PO; suppliers asking about payment status.
-- **Technical knowledge:** ERP procurement module.
-- **Decision authority:** amends POs; confirms goods receipt.
-- **Typical requests:** "Supplier says they invoiced the agreed price; why the mismatch?"
+- **Objetivos:** pedidos de compra precisos e relações saudáveis com fornecedores.
+- **Dores:** faturas que não batem com o PO; fornecedores perguntando sobre o status do pagamento.
+- **Conhecimento técnico:** módulo de compras do ERP.
+- **Autoridade de decisão:** altera POs; confirma o recebimento (goods receipt).
+- **Pedidos típicos:** "O fornecedor diz que faturou o preço combinado; por que a divergência?"
 
 ### Operations Manager
-- **Goals:** a predictable, measurable end-to-end process.
-- **Pain points:** handoffs between Finance and Procurement; no single process owner view.
-- **Technical knowledge:** process mapping, KPIs.
-- **Decision authority:** process changes and priorities across teams.
-- **Typical requests:** "Where is the bottleneck in invoice processing?"
+- **Objetivos:** um processo de ponta a ponta previsível e mensurável.
+- **Dores:** passagens de bastão entre Finanças e Compras; nenhuma visão de um dono único do processo.
+- **Conhecimento técnico:** mapeamento de processos, KPIs.
+- **Autoridade de decisão:** mudanças de processo e prioridades entre os times.
+- **Pedidos típicos:** "Onde está o gargalo no processamento de faturas?"
 
-### Engineering / Platform (AURA side)
-- **Goals:** a reliable, secure, observable Aura Ops.
-- **Pain points:** unclear requirements, flaky integrations, unmeasured AI quality.
-- **Technical knowledge:** high.
-- **Decision authority:** technical design and release; not business policy.
-- **Typical requests:** "What are the acceptance criteria?" / "What is the expected volume?"
+### Engineering / Platform (lado da AURA)
+- **Objetivos:** um Aura Ops confiável, seguro e observável.
+- **Dores:** requisitos pouco claros, integrações instáveis, qualidade da IA não medida.
+- **Conhecimento técnico:** alto.
+- **Autoridade de decisão:** design técnico e release; não define política de negócio.
+- **Pedidos típicos:** "Quais são os critérios de aceite?" / "Qual é o volume esperado?"
 
 ### Compliance
-- **Goals:** effective controls, segregation of duties, complete audit trail.
-- **Pain points:** approvals outside the system; AI decisions nobody can explain.
-- **Technical knowledge:** controls frameworks; low technical depth.
-- **Decision authority:** can block a release or an automation that weakens controls.
-- **Typical requests:** "Show me every action the AI took on this invoice and who approved it."
+- **Objetivos:** controles efetivos, segregação de funções, audit trail completo.
+- **Dores:** aprovações fora do sistema; decisões da IA que ninguém consegue explicar.
+- **Conhecimento técnico:** frameworks de controles; pouca profundidade técnica.
+- **Autoridade de decisão:** pode bloquear um release ou uma automação que enfraqueça os controles.
+- **Pedidos típicos:** "Mostre todas as ações que a IA tomou nesta fatura e quem as aprovou."

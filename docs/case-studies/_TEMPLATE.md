@@ -1,35 +1,35 @@
-# Case Study NNN — Title
+# Case Study NNN — Título
 
-<!-- Copy to NNN-slug.md. Only for relevant problems. Every metric is labeled SYNTHETIC or REAL. Rules: docs/process/WORKING-MODEL.md, "Valid progress and proof of work". -->
+<!-- Copie para NNN-slug.md. Somente para problemas relevantes. Toda métrica recebe o rótulo SYNTHETIC ou REAL. Regras: docs/process/WORKING-MODEL.md, "Progresso válido e proof of work". -->
 
-## Problem
+## Problema
 
-## Business Context
+## Contexto de negócio
 
-## Impact
+## Impacto
 
-## Constraints
+## Restrições
 
-## Investigation
+## Investigação
 
-## Alternatives Considered
+## Alternativas consideradas
 
-## Decision
+## Decisão
 
-## Implementation
+## Implementação
 
-## Verification
+## Verificação
 
-## Metrics
+## Métricas
 
-<!-- Baseline vs result, with SYNTHETIC/REAL label. -->
+<!-- Baseline vs. resultado, com rótulo SYNTHETIC/REAL. -->
 
 ## Trade-offs
 
-## Evidence
+## Evidência
 
-<!-- CLAIM / EVIDENCE / RESULT, with links to PRs, CI runs, tests. -->
+<!-- CLAIM / EVIDENCE / RESULT, com links para PRs, execuções de CI, testes. -->
 
-## What I Learned
+## O que aprendi
 
-## What I Would Improve
+## O que eu melhoraria

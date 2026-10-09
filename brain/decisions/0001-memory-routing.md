@@ -1,30 +1,30 @@
-# 0001 Memory routing
+# 0001 Roteamento da memória
 
-**Status:** Accepted, operator review pending · **Owner:** Operator · **Date:** 2026-10-08 (Bootstrap 01)
+**Status:** Aceita, revisão do operador pendente · **Owner:** Operador · **Data:** 2026-10-08 (Bootstrap 01)
 
-## Context
+## Contexto
 
-The project must be resumable after months, but a growing transcript is unreadable and unsafe as memory: one session's guess would become a permanent "fact". The operator's learning and the project's knowledge are different audiences.
+O projeto precisa poder ser retomado depois de meses, mas um transcript que só cresce é ilegível e inseguro como memória: o palpite de uma sessão viraria um "fato" permanente. O aprendizado do operador e o conhecimento do projeto têm públicos diferentes.
 
-## Decision
+## Decisão
 
-| Kind | Goes to |
+| Tipo | Vai para |
 |---|---|
-| Project fact, decision, gotcha, insight | `brain/` (index, then specific file) |
-| Unvalidated finding | `brain/inbox/` |
-| Operator's learning and evolution | `docs/learning/` (journal, path, glossary) |
-| Lesson about how we work | `/reflect` (pstack), after checking it is reusable |
-| Mistake agents keep repeating | `/correct` (pstack) |
+| Fato, decisão, gotcha, insight do projeto | `brain/` (índice, depois o arquivo específico) |
+| Descoberta não validada | `brain/inbox/` |
+| Aprendizado e evolução do operador | `docs/learning/` (journal, trilha, glossário) |
+| Lição sobre como trabalhamos | `/reflect` (pstack), após verificar que é reutilizável |
+| Erro que os agentes continuam repetindo | `/correct` (pstack) |
 
-## Rationale
+## Justificativa
 
-Separating audiences keeps each file small and readable. The inbox stops single observations from becoming rules.
+Separar os públicos mantém cada arquivo pequeno e legível. O inbox impede que observações isoladas virem regras.
 
-## Trade-offs and alternatives
+## Trade-offs e alternativas
 
-- One `NOTES.md`: simple, but mixes audiences and grows without bound.
-- Store everything via `/reflect`: would turn session facts into skill edits.
+- Um único `NOTES.md`: simples, mas mistura públicos e cresce sem limite.
+- Guardar tudo via `/reflect`: transformaria fatos de sessão em edições de skill.
 
-## Impact
+## Impacto
 
-Every session end needs a short routing step (see `docs/process/SESSION-LIFECYCLE.md`). The inbox must be reviewed, or it becomes a junk drawer.
+Todo fim de sessão precisa de uma etapa curta de roteamento (ver `docs/process/SESSION-LIFECYCLE.md`). O inbox precisa ser revisado, ou vira uma gaveta de bagunça.

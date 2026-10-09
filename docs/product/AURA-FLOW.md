@@ -1,81 +1,81 @@
-# Aura Flow (codename)
+# Aura Flow (codinome)
 
 > **STATUS: SUPERSEDED**
 >
-> This document belongs to the previous vertical-health positioning of AURA. The current product direction is Aura Ops — Enterprise Agentic Automation Platform.
+> Este documento pertence ao posicionamento anterior da AURA, vertical de saúde. A direção atual de produto é o Aura Ops — Enterprise Agentic Automation Platform.
 >
-> Current source of truth: [docs/product/AURA-OPS.md](AURA-OPS.md). Why it changed: decision 0007.
+> Fonte da verdade atual: [docs/product/AURA-OPS.md](AURA-OPS.md). Por que mudou: decisão 0007.
 
-Status: **concept** (at the time). Everything below is a hypothesis unless marked otherwise. No technical architecture is defined here on purpose.
+Status: **conceito** (na época). Tudo abaixo é hipótese, salvo indicação em contrário. Nenhuma arquitetura técnica é definida aqui, de propósito.
 
-## Problem (hypothesis)
+## Problema (hipótese)
 
-Appointment-based premium businesses lose revenue between first contact and attended appointment: slow replies lose leads, missing confirmations cause no-shows, and front-desk staff repeat the same messages all day.
+Negócios premium baseados em agendamento perdem receita entre o primeiro contato e o atendimento realizado: respostas lentas perdem leads, a falta de confirmações causa no-shows e a recepção repete as mesmas mensagens o dia inteiro.
 
-## Users (hypothesis)
+## Usuários (hipótese)
 
-| Persona | Role | Wants |
+| Persona | Papel | Quer |
 |---|---|---|
-| Owner/manager | Buyer | Fuller agenda, fewer no-shows, funnel visibility |
-| Front desk | Daily user | Less repetitive messaging, fewer scheduling mistakes |
-| Professional | Indirect user | Accurate agenda |
-| End client | Receives messages | Fast answers, easy booking and rescheduling |
+| Dono/gestor | Comprador | Agenda mais cheia, menos no-shows, visibilidade do funil |
+| Recepção | Usuário do dia a dia | Menos mensagens repetitivas, menos erros de agendamento |
+| Profissional | Usuário indireto | Agenda precisa |
+| Cliente final | Recebe as mensagens | Respostas rápidas, agendamento e reagendamento fáceis |
 
-## Journey
+## Jornada
 
 ```text
-lead → qualification → service → professional → availability
-     → booking → confirmation → reminder → attendance → follow-up → analytics
+lead → qualificação → serviço → profissional → disponibilidade
+     → agendamento → confirmação → lembrete → comparecimento → follow-up → analytics
 ```
 
-| Step | What Aura Flow would do (hypothesis) |
+| Etapa | O que o Aura Flow faria (hipótese) |
 |---|---|
-| Lead | Capture an inbound contact from a channel |
-| Qualification | Ask what the person wants (administrative/commercial, never clinical) |
-| Service | Map the request to a service in the business catalog |
-| Professional | Pick who can perform it |
-| Availability | Find open slots |
-| Booking | Reserve the slot |
-| Confirmation | Get explicit confirmation from the client |
-| Reminder | Remind before the appointment |
-| Attendance | Record attended / no-show / cancelled |
-| Follow-up | Post-visit message, rebooking suggestion |
-| Analytics | Funnel and no-show numbers for the owner |
+| Lead | Capturar um contato recebido por um canal |
+| Qualificação | Perguntar o que a pessoa deseja (administrativo/comercial, nunca clínico) |
+| Serviço | Mapear o pedido para um serviço do catálogo do negócio |
+| Profissional | Escolher quem pode realizá-lo |
+| Disponibilidade | Encontrar horários livres |
+| Agendamento | Reservar o horário |
+| Confirmação | Obter confirmação explícita do cliente |
+| Lembrete | Lembrar antes do atendimento |
+| Comparecimento | Registrar compareceu / no-show / cancelado |
+| Follow-up | Mensagem pós-atendimento, sugestão de novo agendamento |
+| Analytics | Números de funil e de no-show para o dono |
 
-## Goals (hypothesis)
+## Objetivos (hipótese)
 
-- Reduce no-shows.
-- Reduce time-to-first-reply for leads.
-- Reduce manual front-desk messaging.
-- Give the owner a funnel view.
+- Reduzir no-shows.
+- Reduzir o tempo até a primeira resposta aos leads.
+- Reduzir mensagens manuais da recepção.
+- Dar ao dono uma visão do funil.
 
-## Non-goals (decision)
+## Fora de escopo (decisão)
 
-- No medical diagnosis, triage or clinical advice.
-- No medical records (prontuário) or clinical data.
-- No payments in the first version.
-- No real customer data until a pilot is explicitly approved.
+- Nenhum diagnóstico médico, triagem ou orientação clínica.
+- Nenhum prontuário médico ou dado clínico.
+- Nenhum pagamento na primeira versão.
+- Nenhum dado real de cliente até que um piloto seja explicitamente aprovado.
 
-## Hypothetical metrics
+## Métricas hipotéticas
 
-These are candidate metrics. Any value produced before a real pilot is **simulated**.
+Estas são métricas candidatas. Qualquer valor produzido antes de um piloto real é **simulado**.
 
-| Metric | Definition |
+| Métrica | Definição |
 |---|---|
-| No-show rate | No-shows / confirmed appointments |
-| Lead-to-booking rate | Bookings / leads |
-| Time to first reply | Median time from lead to first response |
-| Manual messages per booking | Messages sent by staff / bookings |
+| Taxa de no-show | No-shows / atendimentos confirmados |
+| Taxa de lead para agendamento | Agendamentos / leads |
+| Tempo até a primeira resposta | Tempo mediano entre o lead e a primeira resposta |
+| Mensagens manuais por agendamento | Mensagens enviadas pela equipe / agendamentos |
 
-## Risks
+## Riscos
 
-- Wrong or duplicated messages harm the customer's client relationship.
-- Clients may write clinical information spontaneously; the product must not store or act on it.
-- Channel providers (WhatsApp) restrict automated messaging and charge per conversation.
-- Double booking if availability is not the single source of truth.
+- Mensagens erradas ou duplicadas prejudicam a relação do cliente com seus próprios clientes.
+- Clientes podem escrever informações clínicas espontaneamente; o produto não deve armazená-las nem agir sobre elas.
+- Provedores de canal (WhatsApp) restringem mensagens automatizadas e cobram por conversa.
+- Agendamento duplicado (double booking) se a disponibilidade não for a única fonte da verdade.
 
-## Future integrations (not started)
+## Integrações futuras (não iniciadas)
 
-- Google Calendar (availability and booking), Stage 5.
-- WhatsApp (messaging channel), Stage 5.
-- Others (Instagram, web form, existing clinic software): unknown.
+- Google Calendar (disponibilidade e agendamento), Stage 5.
+- WhatsApp (canal de mensagens), Stage 5.
+- Outras (Instagram, formulário web, software de clínica existente): desconhecido.

@@ -1,59 +1,59 @@
-# AURA (codename)
+# AURA (codinome)
 
-Every statement is tagged:
+Toda afirmação é classificada:
 
-- **FACT**: verified, or true by definition of this project.
-- **HYPOTHESIS**: believed, not validated.
-- **DECISION**: chosen by us; can be revisited.
-- **UNKNOWN**: open question.
+- **FACT**: verificado, ou verdadeiro por definição deste projeto.
+- **HYPOTHESIS**: acreditamos, mas não foi validado.
+- **DECISION**: escolhido por nós; pode ser revisto.
+- **UNKNOWN**: questão em aberto.
 
-The previous positioning (vertical SaaS for clinics, "Aura Studio") is recorded in `brain/decisions/0007-pivot-to-enterprise-agentic-automation.md`.
+O posicionamento anterior (SaaS vertical para clínicas, "Aura Studio") está registrado em `brain/decisions/0007-pivot-to-enterprise-agentic-automation.md`.
 
-## Context
+## Contexto
 
-- **FACT**: AURA is a simulated company. It has no real customers, revenue or employees.
-- **FACT**: "AURA" and "Aura Ops" are codenames. Brand availability has not been checked.
-- **DECISION**: AURA is B2B: intelligent, auditable automation of enterprise processes through AI agents, integrations, data and human-in-the-loop workflows.
-- **DECISION**: First domain is Finance & Operations, specifically Accounts Payable. One real workflow first.
+- **FACT**: AURA é uma empresa simulada. Não tem clientes, receita nem funcionários reais.
+- **FACT**: "AURA" e "Aura Ops" são codinomes. A disponibilidade das marcas não foi verificada.
+- **DECISION**: AURA é B2B: automação inteligente e auditável de processos corporativos por meio de agentes de IA, integrações, dados e workflows human-in-the-loop.
+- **DECISION**: O primeiro domínio é Finance & Operations, especificamente Accounts Payable. Um workflow real primeiro.
 
-## Market
+## Mercado
 
-- **HYPOTHESIS**: Mid-to-large companies still run much of Accounts Payable manually, and existing automation (OCR, RPA, ERP modules) handles the happy path but not exceptions.
-- **HYPOTHESIS**: The unmet need is exception handling with evidence and auditability, not raw data extraction.
-- **UNKNOWN**: Market size, region, and which company size gets the most value.
+- **HYPOTHESIS**: Empresas de médio e grande porte ainda executam boa parte do Accounts Payable manualmente, e a automação existente (OCR, RPA, módulos de ERP) cobre o caminho feliz, mas não as exceptions.
+- **HYPOTHESIS**: A necessidade não atendida é o tratamento de exceptions com evidências e auditabilidade, não a simples extração de dados.
+- **UNKNOWN**: Tamanho do mercado, região e qual porte de empresa obtém mais valor.
 
-## Target customers
+## Clientes-alvo
 
-- **HYPOTHESIS**: Mid-to-large companies with a dedicated Finance team, an ERP, and a high monthly invoice volume.
-- **HYPOTHESIS**: The buyer is the Finance Manager or CFO; daily users are Finance and Procurement analysts; Compliance can block adoption.
+- **HYPOTHESIS**: Empresas de médio e grande porte com um time de Finanças dedicado, um ERP e alto volume mensal de faturas.
+- **HYPOTHESIS**: O comprador é o Finance Manager ou o CFO; os usuários do dia a dia são analistas de Finanças e de Compras; Compliance pode bloquear a adoção.
 
-## Problems we intend to solve
+## Problemas que pretendemos resolver
 
-- **HYPOTHESIS**: Analysts spend most of their time on re-keying and on chasing divergences.
-- **HYPOTHESIS**: Exceptions (PO mismatch, missing receipt, duplicates) cause late payments and penalties.
-- **HYPOTHESIS**: Approvals and investigations happen outside the system, weakening the audit trail.
+- **HYPOTHESIS**: Analistas gastam a maior parte do tempo redigitando dados e correndo atrás de divergências.
+- **HYPOTHESIS**: Exceptions (divergência com o PO, recebimento ausente, duplicidades) causam atrasos de pagamento e multas.
+- **HYPOTHESIS**: Aprovações e investigações acontecem fora do sistema, enfraquecendo o audit trail.
 
-## Initial value proposition
+## Proposta de valor inicial
 
-- **HYPOTHESIS**: "Fewer manual touches and faster exception resolution, with every decision explained and audited, and a human approving every financial action."
+- **HYPOTHESIS**: "Menos intervenções manuais e resolução mais rápida de exceptions, com cada decisão explicada e auditada, e um humano aprovando toda ação financeira."
 
-## Business model
+## Modelo de negócio
 
-- **DECISION**: B2B SaaS.
-- **HYPOTHESIS**: Subscription by workflow, plus a usage component (documents processed) to cover AI costs.
-- **UNKNOWN**: Price point, and whether AI cost per document allows a margin at mid-market volumes.
+- **DECISION**: SaaS B2B.
+- **HYPOTHESIS**: Assinatura por workflow, mais um componente de uso (documentos processados) para cobrir os custos de IA.
+- **UNKNOWN**: Faixa de preço, e se o custo de IA por documento permite margem nos volumes do mid-market.
 
-## Risks
+## Riscos
 
-- **Financial correctness**: an automation error causes a wrong payment. Mitigation: deterministic validation and human approval (`docs/architecture/README.md`).
-- **Controls and compliance**: automation must not break segregation of duties or the audit trail.
-- **Integration**: real ERPs are heterogeneous; the simulated ERP may underestimate effort.
-- **Competition**: ERP vendors and AP automation specialists exist. **UNKNOWN**: how AURA would differ beyond exception handling.
-- **Scope**: the "platform" framing invites building many domains at once. Mitigation: one workflow first.
-- **Integrity**: simulation must never be presented as reality (see [../../README.md](../../README.md)).
+- **Correção financeira**: um erro de automação causa um pagamento incorreto. Mitigação: validação determinística e aprovação humana (`docs/architecture/README.md`).
+- **Controles e compliance**: a automação não pode quebrar a segregação de funções nem o audit trail.
+- **Integração**: ERPs reais são heterogêneos; o ERP simulado pode subestimar o esforço.
+- **Concorrência**: existem fornecedores de ERP e especialistas em automação de AP. **UNKNOWN**: como a AURA se diferenciaria além do tratamento de exceptions.
+- **Escopo**: o enquadramento como "plataforma" convida a construir muitos domínios ao mesmo tempo. Mitigação: um workflow primeiro.
+- **Integridade**: a simulação nunca deve ser apresentada como realidade (veja [../../README.md](../../README.md)).
 
-## Unvalidated hypotheses to test first
+## Hipóteses não validadas a testar primeiro
 
-1. Exception handling, not extraction, is the main cost in Accounts Payable.
-2. AI-assisted investigation shortens exception resolution measurably.
-3. Finance leaders accept AI recommendations if every one is explained and audited.
+1. O tratamento de exceptions, e não a extração, é o principal custo em Accounts Payable.
+2. A investigação assistida por IA reduz de forma mensurável o tempo de resolução de exceptions.
+3. Líderes de Finanças aceitam recomendações de IA se cada uma for explicada e auditada.

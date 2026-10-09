@@ -1,24 +1,24 @@
-# 0004 Docs check script
+# 0004 Script de verificação de docs
 
-**Status:** Accepted · **Owner:** Operator · **Date:** 2026-10-08 (Bootstrap 01)
+**Status:** Aceita · **Owner:** Operador · **Data:** 2026-10-08 (Bootstrap 01)
 
-## Context
+## Contexto
 
-Documentation-only repositories rot through broken links and facts that disagree across files. The training level is stated in three files (README, AGENTS, learning README) because each audience needs it in place.
+Repositórios só de documentação se degradam com links quebrados e fatos que divergem entre arquivos. O nível de treinamento aparece em três arquivos (README, AGENTS, README de learning) porque cada público precisa dele no próprio lugar.
 
-## Decision
+## Decisão
 
-`tools/check_docs.py` (Python standard library only) fails when a relative Markdown link points to a missing file or when the `TRAINING_LEVEL = N` lines disagree.
+`tools/check_docs.py` (apenas biblioteca padrão do Python) falha quando um link Markdown relativo aponta para um arquivo inexistente ou quando as linhas `TRAINING_LEVEL = N` divergem.
 
-## Rationale
+## Justificativa
 
-Deterministic enforcement over reminders. No dependency added; it can run in CI later unchanged.
+Enforcement determinístico em vez de lembretes. Nenhuma dependência adicionada; pode rodar em CI depois, sem alterações.
 
-## Trade-offs and alternatives
+## Trade-offs e alternativas
 
-- A Markdown linter package: adds a dependency for one check.
-- Manual review: is forgotten.
+- Um pacote de linter de Markdown: adiciona uma dependência para uma única verificação.
+- Revisão manual: é esquecida.
 
-## Impact
+## Impacto
 
-Run `python tools/check_docs.py` before finishing a session. Extend it only when a new class of doc error actually happens.
+Rode `python tools/check_docs.py` antes de encerrar uma sessão. Estenda o script apenas quando uma nova classe de erro de documentação realmente acontecer.

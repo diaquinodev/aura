@@ -1,72 +1,72 @@
-# Aura Ops (codename)
+# Aura Ops (codinome)
 
-Status: **concept**. Nothing in this document is implemented. Statements are hypotheses unless marked otherwise.
+Status: **conceito**. Nada neste documento está implementado. As afirmações são hipóteses, salvo indicação em contrário.
 
-> Intelligent automation platform for enterprise operational processes, combining AI agents, APIs, data, business rules and human approval.
+> Plataforma de automação inteligente para processos operacionais corporativos, combinando agentes de IA, APIs, dados, regras de negócio e aprovação humana.
 
-## Scope strategy (decision)
+## Estratégia de escopo (decisão)
 
-Aura Ops may eventually cover Finance Operations, Procurement, Customer Operations, Compliance, Sales Operations and Backoffice. **One real workflow first:** the first and only domain until its workflow is complete end to end is **Finance & Operations → Accounts Payable**.
+O Aura Ops poderá, no futuro, cobrir Finance Operations, Procurement, Customer Operations, Compliance, Sales Operations e Backoffice. **Um workflow real primeiro:** o primeiro e único domínio, até que seu workflow esteja completo de ponta a ponta, é **Finance & Operations → Accounts Payable**.
 
-## Problem (hypothesis)
+## Problema (hipótese)
 
-Companies receive invoices and payment requests that must be received, interpreted, validated, cross-checked against systems, verified against rules, investigated when they diverge, approved, recorded and audited. In many organizations most of this is manual: analysts re-key data, chase divergences by email, and approvals happen outside any audit trail. The hypothesized cost is analyst time, late payments (penalties, lost early-payment discounts), duplicate payments and weak controls.
+Empresas recebem faturas e solicitações de pagamento que precisam ser recebidas, interpretadas, validadas, conferidas contra sistemas, verificadas contra regras, investigadas quando divergem, aprovadas, registradas e auditadas. Em muitas organizações, a maior parte disso é manual: analistas redigitam dados, correm atrás de divergências por e-mail e as aprovações acontecem fora de qualquer audit trail. O custo hipotético é tempo de analista, pagamentos em atraso (multas, perda de descontos por pagamento antecipado), pagamentos duplicados e controles fracos.
 
-## Users
+## Usuários
 
-Defined as synthetic personas in [../../simulation/AURA-SYN-001.md](../../simulation/AURA-SYN-001.md).
+Definidos como personas sintéticas em [../../simulation/AURA-SYN-001.md](../../simulation/AURA-SYN-001.md).
 
-## Reference workflow: Intelligent Accounts Payable
+## Workflow de referência: Accounts Payable inteligente
 
-Conceptual only; no step is implemented. The **Kind** column applies the boundary in [../architecture/README.md](../architecture/README.md).
+Apenas conceitual; nenhuma etapa está implementada. A coluna **Tipo** aplica a fronteira definida em [../architecture/README.md](../architecture/README.md).
 
-| # | Step | What happens | Kind |
+| # | Etapa | O que acontece | Tipo |
 |---|---|---|---|
-| 1 | Document / request | An invoice or payment request arrives | — |
-| 2 | Intake | Register it, assign an ID, detect the channel | Deterministic |
-| 3 | Document parsing | Extract supplier, amounts, items, dates from an unstructured document | Probabilistic |
-| 4 | Data validation | Required fields, formats, tax ID checksum, totals add up | Deterministic |
-| 5 | ERP / database lookup | Find supplier, purchase order (PO), goods receipt | Deterministic |
-| 6 | Business rules | Approval thresholds, supplier status, payment terms | Deterministic |
-| 7 | 3-way match | PO vs goods receipt vs invoice: quantities and prices within tolerance | Deterministic |
-| 8 | Divergence detection | Flag mismatches, duplicates, missing documents as exceptions | Deterministic |
-| 9 | AI investigation | Gather context on an exception (history, emails, similar cases) and explain the likely cause | Probabilistic |
-| 10 | Recommendation | Propose approve / reject / request correction, with evidence | Probabilistic |
-| 11 | Human approval | An authorized person decides; policy defines who | Human |
-| 12 | Business action | Record in ERP, schedule payment, notify supplier | Deterministic |
-| 13 | Audit log | Immutable record of inputs, rule results, AI outputs, the decision and who made it | Deterministic |
-| 14 | Observability | Traces, latency, cost, error rates per step | Deterministic |
-| 15 | Evaluation | Measure parsing accuracy, recommendation quality, exception handling time | Deterministic harness over probabilistic outputs |
+| 1 | Documento / solicitação | Chega uma fatura ou solicitação de pagamento | — |
+| 2 | Entrada (intake) | Registrar, atribuir um ID, detectar o canal | Determinístico |
+| 3 | Parsing do documento | Extrair fornecedor, valores, itens e datas de um documento não estruturado | Probabilístico |
+| 4 | Validação de dados | Campos obrigatórios, formatos, dígito verificador do identificador fiscal, totais que fecham | Determinístico |
+| 5 | Consulta ao ERP / banco de dados | Localizar fornecedor, pedido de compra (PO), recebimento (goods receipt) | Determinístico |
+| 6 | Regras de negócio | Limites de aprovação, status do fornecedor, condições de pagamento | Determinístico |
+| 7 | 3-way match | PO vs recebimento vs fatura: quantidades e preços dentro da tolerância | Determinístico |
+| 8 | Detecção de divergências | Sinalizar divergências, duplicidades e documentos ausentes como exceptions | Determinístico |
+| 9 | Investigação por IA | Reunir contexto sobre uma exception (histórico, e-mails, casos similares) e explicar a causa provável | Probabilístico |
+| 10 | Recomendação | Propor aprovar / rejeitar / solicitar correção, com evidências | Probabilístico |
+| 11 | Aprovação humana | Uma pessoa autorizada decide; a política define quem | Humano |
+| 12 | Ação de negócio | Registrar no ERP, agendar pagamento, notificar o fornecedor | Determinístico |
+| 13 | Log de auditoria | Registro imutável das entradas, resultados das regras, saídas da IA, da decisão e de quem a tomou | Determinístico |
+| 14 | Observabilidade | Traces, latência, custo e taxas de erro por etapa | Determinístico |
+| 15 | Avaliação | Medir acurácia do parsing, qualidade das recomendações e tempo de tratamento de exceptions | Harness determinístico sobre saídas probabilísticas |
 
-## Goals (hypothesis)
+## Objetivos (hipótese)
 
-- Reduce manual handling time per invoice.
-- Resolve exceptions faster, with evidence attached.
-- Zero duplicate payments.
-- Every financial action is traceable to a human decision or an approved policy.
+- Reduzir o tempo de tratamento manual por fatura.
+- Resolver exceptions mais rápido, com evidências anexadas.
+- Zero pagamentos duplicados.
+- Toda ação financeira é rastreável até uma decisão humana ou uma política aprovada.
 
-## Non-goals (decision)
+## Fora de escopo (decisão)
 
-- Agents do not execute financial actions autonomously (see [../architecture/README.md](../architecture/README.md)).
-- No real ERP, bank or supplier connection until pilot readiness (Stage 10).
-- No other domain until Accounts Payable is complete.
-- No real company, invoice or personal data.
+- Agentes não executam ações financeiras de forma autônoma (veja [../architecture/README.md](../architecture/README.md)).
+- Nenhuma conexão real com ERP, banco ou fornecedor até a prontidão para piloto (Stage 10).
+- Nenhum outro domínio até que Accounts Payable esteja completo.
+- Nenhum dado real de empresa, fatura ou pessoa.
 
-## Hypothetical metrics
+## Métricas hipotéticas
 
-Any value produced before a real pilot is **simulated**.
+Qualquer valor produzido antes de um piloto real é **simulado**.
 
-| Metric | Definition |
+| Métrica | Definição |
 |---|---|
-| Touchless rate | Invoices processed with no manual step / total invoices |
-| Exception resolution time | Median time from exception flagged to decision |
-| Parsing accuracy | Fields extracted correctly / fields evaluated (eval set) |
-| Recommendation agreement | AI recommendations accepted by approvers / recommendations |
-| Duplicate payments | Count; target zero |
+| Taxa touchless | Faturas processadas sem nenhuma etapa manual / total de faturas |
+| Tempo de resolução de exceptions | Tempo mediano entre a sinalização da exception e a decisão |
+| Acurácia do parsing | Campos extraídos corretamente / campos avaliados (conjunto de eval) |
+| Concordância com recomendações | Recomendações da IA aceitas pelos aprovadores / recomendações |
+| Pagamentos duplicados | Contagem; meta zero |
 
-## Risks
+## Riscos
 
-- A wrong AI extraction or recommendation leads to a wrong payment. Mitigation: deterministic validation and human approval before any action.
-- Over-automation erodes financial controls and segregation of duties.
-- Real ERPs differ widely; a simulated ERP may hide integration complexity.
-- LLM cost and latency per invoice may exceed the value at low volumes. **UNKNOWN** until measured.
+- Uma extração ou recomendação incorreta da IA leva a um pagamento incorreto. Mitigação: validação determinística e aprovação humana antes de qualquer ação.
+- Automação excessiva corrói os controles financeiros e a segregação de funções.
+- ERPs reais variam muito; um ERP simulado pode esconder a complexidade de integração.
+- O custo e a latência de LLM por fatura podem superar o valor gerado em volumes baixos. **UNKNOWN** até ser medido.

@@ -1,30 +1,30 @@
-# Session lifecycle
+# Ciclo de vida da sessão
 
-A session is one focused block of work (with or without an AI agent). The goal is to resume months later from curated context, not from transcripts.
+Uma sessão é um bloco focado de trabalho (com ou sem um agente de IA). O objetivo é conseguir retomar o trabalho meses depois a partir de um contexto curado, não de transcrições.
 
-## Session start
+## Início da sessão
 
-1. **Identify the objective.** One sentence: what is done when this session ends?
-2. **Recover minimal context.** Read [../../brain/index.md](../../brain/index.md), then only the files relevant to the objective. `/recall` can help after a long break.
-3. **Check Git state.** `git status`, `git branch --show-current`, `git log -5 --oneline`.
-4. **Check the backlog**, once it exists (Stage 2).
-5. **Identify the training level** in [../learning/README.md](../learning/README.md).
+1. **Identificar o objetivo.** Uma frase: o que estará pronto quando esta sessão terminar?
+2. **Recuperar o contexto mínimo.** Leia [../../brain/index.md](../../brain/index.md) e, depois, apenas os arquivos relevantes para o objetivo. `/recall` pode ajudar após uma pausa longa.
+3. **Verificar o estado do Git.** `git status`, `git branch --show-current`, `git log -5 --oneline`.
+4. **Verificar o backlog**, quando ele existir (Stage 2).
+5. **Identificar o nível de treinamento** em [../learning/README.md](../learning/README.md).
 
-## During the session
+## Durante a sessão
 
-Record only decisions, discoveries and evidence. Do not transcribe the conversation. Unvalidated ideas go to `brain/inbox/`.
+Registre apenas decisões, descobertas e evidências. Não transcreva a conversa. Ideias não validadas vão para `brain/inbox/`.
 
-## Session end
+## Fim da sessão
 
-Write a journal entry from [../learning/journal/_TEMPLATE.md](../learning/journal/_TEMPLATE.md) that covers:
+Escreva uma entrada no journal a partir de [../learning/journal/_TEMPLATE.md](../learning/journal/_TEMPLATE.md) que cubra:
 
-1. **Work summary**: what was done.
-2. **Decisions**: what was decided and why. Durable ones also go to `brain/decisions/`.
-3. **Evidence**: commands, tests and their results.
-4. **Open questions**: what is still unresolved.
-5. **Learning**: what the operator should study or review.
-6. **Insights**: product or process ideas. Worth keeping ones go to `brain/insights/`.
-7. **Next session**: the next logical step.
-8. **Reflection**: if the session taught something about *how we work*, consider `/reflect`. It is not a substitute for the factual record above.
+1. **Resumo do trabalho**: o que foi feito.
+2. **Decisões**: o que foi decidido e por quê. As duradouras também vão para `brain/decisions/`.
+3. **Evidências**: comandos, testes e seus resultados.
+4. **Perguntas em aberto**: o que ainda não foi resolvido.
+5. **Aprendizado**: o que o operador deve estudar ou revisar.
+6. **Insights**: ideias de produto ou de processo. As que valem a pena manter vão para `brain/insights/`.
+7. **Próxima sessão**: o próximo passo lógico.
+8. **Reflexão**: se a sessão ensinou algo sobre *como trabalhamos*, considere `/reflect`. Isso não substitui o registro factual acima.
 
-Then run `python tools/check_docs.py` and review `git diff` before committing. Last question: did this session produce executable engineering? If not, check the documentation budget in [WORKING-MODEL.md](WORKING-MODEL.md).
+Em seguida, rode `python tools/check_docs.py` e revise o `git diff` antes de fazer o commit. Última pergunta: esta sessão produziu engenharia executável? Se não, verifique o documentation budget em [WORKING-MODEL.md](WORKING-MODEL.md).

@@ -1,27 +1,27 @@
-# Session 2026-10-09 — Stage 0 closeout
+# Sessão 2026-10-09 — Encerramento do Stage 0
 
-## What I worked on
+## No que trabalhei
 
-Closed Stage 0: renamed the synthetic tenant to `AURA-SYN-001` (decision 0008), aligned superseded banners, validated docs, reviewed the staged baseline for secrets, and made the first commit on `main`.
+Encerrei o Stage 0: renomeei o tenant sintético para `AURA-SYN-001` (decisão 0008), alinhei os banners de decisões substituídas, validei os docs, revisei a baseline em staging em busca de secrets e fiz o primeiro commit na `main`.
 
-## What I understood
+## O que entendi
 
-- Staging (`git add`) and committing are separate steps; `git diff --cached` shows exactly what the commit will contain.
-- A pre-commit review checks three things: content is correct (`check_docs.py`), formatting is clean (`git diff --cached --check`), nothing sensitive is staged.
-- `git mv` keeps a rename visible as a rename instead of a delete plus an add.
+- Staging (`git add`) e commit são etapas separadas; o `git diff --cached` mostra exatamente o que o commit vai conter.
+- Uma revisão pré-commit verifica três coisas: o conteúdo está correto (`check_docs.py`), a formatação está limpa (`git diff --cached --check`), nada sensível está em staging.
+- O `git mv` mantém uma renomeação visível como renomeação, em vez de uma exclusão mais uma adição.
 
-## Decisions I made
+## Decisões que tomei
 
-Replace "Nexa Group" with an explicitly synthetic ID; from now on `main` is the stable baseline and work goes through branch + PR.
+Substituir "Nexa Group" por um ID explicitamente sintético; daqui em diante, a `main` é a baseline estável e o trabalho passa por branch + PR.
 
-## Evidence
+## Evidência
 
-See the Stage 0 closeout report; commit hash via `git log --oneline -1`.
+Veja o relatório de encerramento do Stage 0; hash do commit via `git log --oneline -1`.
 
-## What I could explain in an interview
+## O que eu conseguiria explicar numa entrevista
 
-"Before the first commit I checked the staged diff for whitespace errors and secrets, and confirmed `.gitignore` covered env files, keys and local databases."
+"Antes do primeiro commit, verifiquei o diff em staging em busca de erros de whitespace e de secrets, e confirmei que o `.gitignore` cobria arquivos env, chaves e bancos de dados locais."
 
-## Next challenge
+## Próximo desafio
 
-Connect GitHub, run `/setup-pstack`, then Bootstrap 02: first branch, first PR, first executable code.
+Conectar o GitHub, executar o `/setup-pstack` e depois o Bootstrap 02: primeira branch, primeiro PR, primeiro código executável.

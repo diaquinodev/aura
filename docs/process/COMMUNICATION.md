@@ -1,143 +1,143 @@
-# Corporate communication
+# Comunicação corporativa
 
-How people (and agents) communicate inside the Aura simulation. Goal: train the operator in real workplace communication, not just in code.
+Como as pessoas (e os agentes) se comunicam dentro da simulação Aura. Objetivo: treinar o operador em comunicação real de ambiente de trabalho, não apenas em código.
 
-The standard: **clear, objective, technical when needed, outcome-oriented, professional.** Aura should feel like a real company, not a corporate caricature.
+O padrão: **clara, objetiva, técnica quando necessário, orientada a resultado, profissional.** A Aura deve parecer uma empresa real, não uma caricatura corporativa.
 
-## Principles
+## Princípios
 
-- Use real industry terms (`blocker`, `refinement`, `trade-off`, `RCA`) when they name something real in the process. Never as decoration.
-- Do not translate terms the market uses in English.
-- Connect technology to outcome: "We added a retry strategy to reduce transient failures in the ERP supplier lookup", not "We added retry".
-- No meeting, template or framework without a purpose. Unknown fields stay `TBD` or `Needs discovery`; never invent content to fill a template.
-- Simulated customers, incidents and metrics are always fictional (see [../../README.md](../../README.md)).
+- Use termos reais do mercado (`blocker`, `refinement`, `trade-off`, `RCA`) quando eles nomeiam algo real no processo. Nunca como enfeite.
+- Não traduza termos que o mercado usa em inglês.
+- Conecte tecnologia a resultado: "Adicionamos uma estratégia de retry para reduzir falhas transitórias na consulta de fornecedores no ERP", e não "Adicionamos retry".
+- Nenhuma reunião, template ou framework sem propósito. Campos desconhecidos ficam como `TBD` ou `Needs discovery`; nunca invente conteúdo para preencher um template.
+- Clientes, incidents e métricas simulados são sempre fictícios (veja [../../README.md](../../README.md)).
 
-## Support by training level
+## Suporte por nível de treinamento
 
-Current level: see [../learning/README.md](../learning/README.md).
+Nível atual: veja [../learning/README.md](../learning/README.md).
 
-| Level | Terms | Operator |
+| Nível | Termos | Operador |
 |---|---|---|
-| 1 Guided | Use the term and add a one-line explanation the first few times it appears. Stop once it has been used and understood. | Supported in meetings, status and tickets |
-| 2 Assisted | Use corporate language normally; explain only new concepts. | Writes status and tickets; AI reviews |
-| 3 Professional | No automatic explanation or translation. | Participates, defends decisions, raises risks and blockers, proposes next steps; feedback comes afterwards |
+| 1 Guided | Use o termo e adicione uma explicação de uma linha nas primeiras vezes em que ele aparecer. Pare quando ele já tiver sido usado e compreendido. | Recebe apoio em reuniões, status e tickets |
+| 2 Assisted | Use a linguagem corporativa normalmente; explique apenas conceitos novos. | Escreve status e tickets; a IA revisa |
+| 3 Professional | Sem explicação ou tradução automática. | Participa, defende decisões, levanta riscos e blockers, propõe próximos passos; o feedback vem depois |
 
-Terms that become relevant and recurring go to [../learning/GLOSSARY.md](../learning/GLOSSARY.md). Trivial terms do not.
+Termos que se tornam relevantes e recorrentes vão para [../learning/GLOSSARY.md](../learning/GLOSSARY.md). Termos triviais, não.
 
-**Correcting the operator:** answer normally, then, only when useful, add one line: *"In a corporate setting you could say: ..."*. Example: "the thing broke" → "We identified a regression in the invoice approval flow after the last change." Do not over-correct.
+**Corrigindo o operador:** responda normalmente e, só quando for útil, adicione uma linha: *"Em um ambiente corporativo, você poderia dizer: ..."*. Exemplo: "a coisa quebrou" → "Identificamos uma regressão no fluxo de aprovação de faturas após a última mudança." Não corrija em excesso.
 
-## Role voices
+## Vozes por papel
 
-Each message reflects who is speaking.
+Cada mensagem reflete quem está falando.
 
-| Role | Focuses on | Does not |
+| Papel | Foca em | Não faz |
 |---|---|---|
-| Product Manager | User, impact, priority, metrics, business, timeline | Prescribe implementation |
-| Tech Lead | Architecture, risk, dependencies, quality, tech debt, trade-offs | Decide business priority alone |
-| Engineer | Investigation, implementation, tests, dependencies, evidence | Claim without evidence |
-| Customer Success | Customer, impact, urgency, expectations, satisfaction | Promise dates engineering has not agreed |
-| SRE / Platform | Availability, incidents, observability, capacity, SLOs | Change product scope |
+| Product Manager | Usuário, impacto, prioridade, métricas, negócio, prazo | Prescrever a implementação |
+| Tech Lead | Arquitetura, risco, dependências, qualidade, tech debt, trade-offs | Decidir sozinho a prioridade de negócio |
+| Engineer | Investigação, implementação, testes, dependências, evidências | Afirmar sem evidência |
+| Customer Success | Cliente, impacto, urgência, expectativas, satisfação | Prometer datas que a engenharia não acordou |
+| SRE / Platform | Disponibilidade, incidents, observabilidade, capacidade, SLOs | Mudar o escopo do produto |
 
 ## Templates
 
 ### Ticket
 
-Tickets often arrive as a business symptom ("AURA-SYN-001 Finance reports the exception queue doubling before month-end close"), not as a solution ("Add a queue worker"). The engineer investigates before defining the solution.
+Tickets costumam chegar como um sintoma de negócio ("AURA-SYN-001 Finance relata que a fila de exceções dobra antes do fechamento do mês"), não como uma solução ("Adicionar um worker de fila"). O engenheiro investiga antes de definir a solução.
 
 ```text
-Context:
-Business Problem:
-User Impact:
-Current Behavior:
-Expected Outcome:
-Acceptance Criteria:
-Priority:          (P0–P3)
-Severity:          (for defects/incidents)
-Dependencies:
-Risks:
-Open Questions:
+Contexto:
+Problema de negócio:
+Impacto no usuário:
+Comportamento atual:
+Resultado esperado:
+Critérios de aceite:
+Prioridade:        (P0–P3)
+Severidade:        (para defeitos/incidents)
+Dependências:
+Riscos:
+Perguntas em aberto:
 ```
 
-### Status update
+### Atualização de status
 
 ```text
-CURRENT STATUS:  Investigating the ERP supplier lookup failure.
-WHAT WAS DONE:   Reproduction confirmed; current hypothesis is the retry flow.
-BLOCKERS:        None.
-RISKS:           Fix may touch shared retry code used by the purchase order lookup.
-NEXT STEP:       Validate hypothesis, then propose the fix.
+CURRENT STATUS:  Investigando a falha na consulta de fornecedores no ERP.
+WHAT WAS DONE:   Reprodução confirmada; a hipótese atual é o fluxo de retry.
+BLOCKERS:        Nenhum.
+RISKS:           A correção pode afetar o código compartilhado de retry usado pela consulta de pedidos de compra.
+NEXT STEP:       Validar a hipótese e, em seguida, propor a correção.
 ```
 
 ### Daily
 
-Short. Four lines, not a report.
+Curta. Quatro linhas, não um relatório.
 
 ```text
-Yesterday:   ...
-Today:       ...
+Ontem:       ...
+Hoje:        ...
 Blockers:    ...
-Risk/dependency (if any): ...
+Risco/dependência (se houver): ...
 ```
 
 ### Refinement
 
-Do not hand over the solution. Ask what Product and Engineering would ask:
+Não entregue a solução pronta. Pergunte o que Product e Engineering perguntariam:
 
-- What problem, for which user, with what impact (and how do we know)?
-- What is in scope and explicitly out of scope?
-- What are the acceptance criteria? How will we verify them?
-- Dependencies, risks, open questions? Is it small enough for one sprint?
+- Qual problema, para qual usuário, com qual impacto (e como sabemos)?
+- O que está no escopo e o que está explicitamente fora dele?
+- Quais são os critérios de aceite? Como vamos verificá-los?
+- Dependências, riscos, perguntas em aberto? É pequeno o bastante para uma sprint?
 
 ### Sprint planning
 
-The backlog is not a list where everything fits. Weigh priority, team capacity, dependencies, complexity, risk, work in progress, open incidents and tech debt. Say explicitly what is **not** entering the sprint and why.
+O backlog não é uma lista onde tudo cabe. Pondere prioridade, capacidade do time, dependências, complexidade, risco, trabalho em andamento, incidents abertos e tech debt. Diga explicitamente o que **não** entra na sprint e por quê.
 
 ### Incident
 
 ```text
 SEVERITY:            P1
 STATUS:              INVESTIGATING | IDENTIFIED | MONITORING | RESOLVED
-IMPACT:              Invoices cannot be submitted for approval.
+IMPACT:              Faturas não podem ser enviadas para aprovação.
 STARTED:             08:41
 OWNER:               Engineering
-CURRENT HYPOTHESIS:  Not yet confirmed.
-NEXT UPDATE:         After reproduction is validated.
+CURRENT HYPOTHESIS:  Ainda não confirmada.
+NEXT UPDATE:         Após a validação da reprodução.
 ```
 
-### RCA (after the incident)
+### RCA (após o incident)
 
 ```text
 IMPACT / TIMELINE / ROOT CAUSE / MITIGATION /
 CORRECTIVE ACTION / PREVENTIVE ACTION / FOLLOW-UP
 ```
 
-Blameless: describe what the system allowed, not who failed.
+Blameless: descreva o que o sistema permitiu, não quem falhou.
 
-### Code review comment
+### Comentário de code review
 
-State problem, risk, suggestion, and severity when needed.
+Indique o problema, o risco, a sugestão e a severidade quando necessário.
 
-> There is a risk of processing the same webhook more than once here. Can we make this operation idempotent or add a unique constraint in the database? (blocking)
+> Há um risco de processar o mesmo webhook mais de uma vez aqui. Podemos tornar essa operação idempotente ou adicionar uma unique constraint no banco de dados? (bloqueante)
 
-### Technical decision
+### Decisão técnica
 
-Speak in trade-offs, not preferences: "PostgreSQL reduces our operational complexity at this stage but couples the application to a relational model. Given current volume and transactional requirements, the trade-off is acceptable." Durable decisions are recorded in `brain/decisions/` using the format in [../../brain/index.md](../../brain/index.md).
+Fale em trade-offs, não em preferências: "O PostgreSQL reduz nossa complexidade operacional neste estágio, mas acopla a aplicação a um modelo relacional. Dados o volume atual e os requisitos transacionais, o trade-off é aceitável." Decisões duradouras são registradas em `brain/decisions/` usando o formato em [../../brain/index.md](../../brain/index.md).
 
-### Meeting
+### Reunião
 
 ```text
 MEETING TYPE / PURPOSE / PARTICIPANTS / AGENDA / DISCUSSION /
 DECISIONS / ACTION ITEMS / OPEN QUESTIONS
 ```
 
-Every action item:
+Todo action item:
 
 ```text
-ACTION / OWNER / STATUS / DEPENDENCY / TARGET (if any)
+ACTION / OWNER / STATUS / DEPENDENCY / TARGET (se houver)
 ```
 
-No decision stays only in a transcript.
+Nenhuma decisão fica apenas em uma transcrição.
 
 ## Escalation
 
-Escalate when there is a product decision, an external dependency, high risk, significant impact, missing access, a priority conflict, a relevant architecture change, or a critical incident. Escalation is not giving up: it puts the decision with the person who owns it, with context and a recommendation.
+Faça escalation quando houver uma decisão de produto, uma dependência externa, risco alto, impacto significativo, falta de acesso, conflito de prioridade, uma mudança de arquitetura relevante ou um incident crítico. Escalation não é desistir: é colocar a decisão com quem tem o ownership dela, com contexto e uma recomendação.
