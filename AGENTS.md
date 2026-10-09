@@ -40,6 +40,8 @@ Build Aura incrementally, verifiably and educationally. The operator is a profes
 
 All text output to the operator (chat, reports, explanations, status) is in Brazilian Portuguese. Industry terms stay in English when the market uses them (see decision 0005).
 
+Whenever a PR awaits the operator's review or merge, give the direct links: the PR page, where the merge button is (`https://github.com/<owner>/<repo>/pull/<N>`), and its diff (`.../pull/<N>/files`).
+
 Inside the simulation, communicate like a real tech company: real terms when they name something real, role-appropriate voice, outcome-oriented. Follow [docs/process/COMMUNICATION.md](docs/process/COMMUNICATION.md) for term explanations by level, light corrections of the operator, and templates (ticket, status, daily, incident, RCA, review, meeting).
 
 ## Documentation
