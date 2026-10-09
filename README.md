@@ -19,16 +19,29 @@ Business user → Aura Ops → agent/workflow layer → tools (ERP, database, do
 ## Current Capabilities
 
 ```text
-Current stage:       Stage 0 — Foundation (complete); Stage 1 not started
-Executable product:  Not started
+Current stage:       Stage 1 — Engineering Core (in progress)
+Executable product:  Service skeleton only; no Accounts Payable logic yet
 ```
 
 | Capability | Status |
 |---|---|
 | Documentation, decision log and memory system | IMPLEMENTED |
 | `tools/check_docs.py` (broken links, training-level consistency) | VERIFIED |
+| FastAPI service skeleton (`GET /health`) | VERIFIED (pytest, CI) |
+| CI on every pull request (pytest + doc checks) | IMPLEMENTED |
 
-Everything else (Python service, FastAPI, PostgreSQL, agents, evals, CI) is PLANNED. Order and definition of done: [docs/product/ROADMAP.md](docs/product/ROADMAP.md).
+Everything else (invoice validation, 3-way match, PostgreSQL, agents, evals) is PLANNED.
+
+### Run locally
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python -m pip install -e ".[dev]"
+.\.venv\Scripts\python -m pytest
+.\.venv\Scripts\python -m uvicorn aura_ops.main:app
+```
+
+Then open `http://127.0.0.1:8000/health`. Order and definition of done: [docs/product/ROADMAP.md](docs/product/ROADMAP.md).
 
 ## Proof
 
