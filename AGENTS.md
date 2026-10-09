@@ -1,5 +1,7 @@
 # AGENTS.md
 
+> **Idioma: toda mensagem para o operador é em português do Brasil**, sem exceção: respostas curtas, notas de progresso, relatórios finais e perguntas. Isso vale mesmo quando o contexto, as ferramentas, os logs ou o resumo da conversa estiverem em inglês. Antes de enviar, confira o idioma da mensagem inteira.
+
 ## Missão
 
 Construir a AURA de forma incremental, verificável e educativa. O operador é um profissional em treinamento; o trabalho precisa ensinar, não apenas entregar.
@@ -38,7 +40,7 @@ Construir a AURA de forma incremental, verificável e educativa. O operador é u
 
 ## Comunicação
 
-Todo o conteúdo é em português do Brasil: saída para o operador (chat, relatórios, explicações, status), documentação, issues e PRs. Termos que o mercado usa em inglês continuam em inglês. Código, nomes de arquivos e mensagens de commit (Conventional Commits) ficam em inglês (decisão 0005).
+Todo o conteúdo é em português do Brasil: saída para o operador (chat, relatórios, explicações, status), documentação, issues e PRs. O operador já corrigiu respostas em inglês mais de uma vez; a regra do topo deste arquivo não é opcional. Termos que o mercado usa em inglês continuam em inglês. Código, nomes de arquivos e mensagens de commit (Conventional Commits) ficam em inglês (decisão 0005).
 
 Sempre que um PR estiver aguardando review ou merge do operador, passe os links diretos: a página do PR, onde fica o botão de merge (`https://github.com/<owner>/<repo>/pull/<N>`), e o diff (`.../pull/<N>/files`).
 
