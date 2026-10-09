@@ -1,6 +1,8 @@
 # 0005 Repository language
 
-**Status:** Proposed, needs the operator's decision · **Owner:** Operator · **Date:** 2026-10-08
+**Status:** Partially decided · **Owner:** Operator · **Date:** 2026-10-08
+
+> **Update 2026-10-09:** the operator decided that all text output to the operator (chat, reports, explanations) is in Brazilian Portuguese. Repository content language is still proposed (English).
 
 ## Context
 

@@ -10,7 +10,7 @@ Durable choices. Format: header line with Status, Owner, Date; then Context, Dec
 - [0002](decisions/0002-create-on-first-content.md): directories and docs are created when they get real content, not in advance.
 - [0003](decisions/0003-synthetic-data-only.md): only synthetic organizations, documents and data until a pilot is explicitly approved (rationale updated by 0007).
 - [0004](decisions/0004-docs-check-script.md): Markdown links and training level are checked by a stdlib Python script.
-- [0005](decisions/0005-repo-language.md): repository content in English, conversation in Portuguese (proposed).
+- [0005](decisions/0005-repo-language.md): output to the operator in Brazilian Portuguese (decided); repository content in English (proposed).
 - [0006](decisions/0006-communication-policy-location.md): communication policy lives in `docs/process/COMMUNICATION.md`, referenced from `AGENTS.md`; no Rule or Skill yet.
 - [0007](decisions/0007-pivot-to-enterprise-agentic-automation.md): pivot from vertical healthcare SaaS to enterprise agentic automation; Aura Ops, Accounts Payable first. Records the previous direction.
 - [0008](decisions/0008-synthetic-tenant-identifiers.md): synthetic organizations use `AURA-SYN-NNN` IDs, not brand-like names.

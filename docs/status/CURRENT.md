@@ -37,4 +37,4 @@ Operational snapshot. Update at the end of every session that changes it. The RE
 
 ## Pending operator decisions
 
-Review decisions 0001, 0002, 0006; decide 0005 (repository language).
+Review decisions 0001, 0002, 0006; decide the repository-content part of 0005 (chat output in Brazilian Portuguese is already decided).
