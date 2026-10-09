@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
 LEVEL = re.compile(r"TRAINING_LEVEL = (\d)")
 LEVEL_FILES = ["README.md", "AGENTS.md", "docs/learning/README.md", "docs/status/CURRENT.md"]
-SKIP_DIRS = {".git", ".venv", "venv", "node_modules"}
+SKIP_DIRS = {".git", ".venv", "venv", "node_modules", ".pytest_cache"}
 
 
 def markdown_files():
