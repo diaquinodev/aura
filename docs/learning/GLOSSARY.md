@@ -39,6 +39,16 @@ The ability to understand what a running system is doing from its logs, metrics 
 *At Aura:* planned for Stage 7.
 *In a real company:* when a booking fails, a trace shows which step and which external call failed.
 
+**Proof of work**
+Evidence that lets someone else verify the work was done and understood: code, tests, PRs, CI runs, metrics, case studies.
+*At Aura:* from Stage 1, a milestone without it is not complete.
+*In a real company:* a promotion case cites shipped PRs and measured impact, not "familiar with Kafka".
+
+**Baseline**
+The measured value of something before a change, so the change can be compared against it.
+*At Aura:* duplicate count before and after a fix, labeled SYNTHETIC.
+*In a real company:* "p95 latency was 800 ms before the cache; 300 ms after."
+
 ## AI agents
 
 **Agent**

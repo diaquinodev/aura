@@ -64,3 +64,31 @@ Agent Recommendation → Policy → Human Approval → Action
 ## Principle 3: everything auditable
 
 Each business action records its inputs, rule results, AI outputs (with model and version), the decision, who made it, and when. If it is not in the audit log, it did not happen.
+
+## Principle 4: no technology without a problem
+
+No technology enters AURA because it is popular. RAG, MCP, agent frameworks, Redis, vector databases, orchestration, Kubernetes, Kafka or an observability platform need:
+
+```text
+PROBLEM → REQUIREMENT → ALTERNATIVES → DECISION → IMPLEMENTATION → EVIDENCE
+```
+
+recorded in `brain/decisions/`. Without a concrete problem it is rejected or deferred.
+
+## Principle 5: agents last, and evaluated
+
+```text
+Business Rules → Deterministic Engine → APIs → Data → Failure Cases → Agent Assistance
+```
+
+No agent before a problem that needs one. Agents are **evaluated, not just demonstrated**: task success, tool errors, hallucinations, human escalations, latency, tokens, cost, safety failures. Each metric is added only when it can actually be measured.
+
+## Simulator (PLANNED)
+
+The simulator is more than training material. It is also:
+
+- **reproducible scenarios**: the same scenario runs against different versions of the solution;
+- **eval harness**: results are compared across versions (Scenario 001 → version A → result; Scenario 001 → version B → result);
+- **incident generator**: failures injected on purpose, reproducibly.
+
+Synthetic organizations such as `simulation/AURA-SYN-001.md` are its first input. All its results are SYNTHETIC.

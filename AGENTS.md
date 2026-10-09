@@ -27,7 +27,8 @@ Build Aura incrementally, verifiably and educationally. The operator is a profes
 - Evidence over assumptions; tests over claims.
 - Deterministic enforcement (scripts, tests, CI) over written reminders.
 - No agent, abstraction or directory without a concrete problem it solves.
-- Deterministic first, AI where uncertainty exists. Never add an LLM, agent, MCP or RAG only to make the architecture look sophisticated.
+- Deterministic first, AI where uncertainty exists. No technology without a concrete problem ([docs/architecture/README.md](docs/architecture/README.md), principle 4).
+- From Stage 1, documentation alone is not progress. What counts, evidence format, SYNTHETIC/REAL labels, PR and commit standards: [docs/process/WORKING-MODEL.md](docs/process/WORKING-MODEL.md), "Valid progress and proof of work".
 - Agents recommend; humans approve financial actions until evidence justifies more autonomy.
 - Never describe a capability as IMPLEMENTED or VERIFIED without evidence.
 

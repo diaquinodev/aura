@@ -24,4 +24,24 @@ Capability-based, no dates. A stage is done when its capability is demonstrated 
 - [x] Git initialized by the operator and first commit made.
 - [ ] Operator has reviewed and accepted (or changed) the decisions in `brain/decisions/`. Partially done (0007, 0008 decided); the rest is carried into Bootstrap 02 and does not block it.
 
-From Stage 1 on, every milestone must produce at least one of: executable code, an automated test, a working integration, a metric, an eval, or verifiable technical evidence.
+From Stage 1 on, a stage is complete only with executable evidence (hard rule in [../process/WORKING-MODEL.md](../process/WORKING-MODEL.md)).
+
+## Stage 1 definition of done
+
+- [ ] Python project initialized
+- [ ] FastAPI service running locally
+- [ ] Pydantic schemas for the invoice domain
+- [ ] Deterministic invoice validation
+- [ ] Deterministic 3-way match
+- [ ] Tests with pytest, including edge cases
+- [ ] Work done on a branch and merged through a pull request
+- [ ] CI running the tests on every PR
+- [ ] One small case study: **Case 001 — Deterministic 3-Way Matching Engine** (hypothesis: deterministic financial rules should be solved deterministically before any AI is introduced; must include problem, baseline, implementation, tests, edge cases, evidence)
+
+## External validation path
+
+```text
+Simulation → Internal demo → External reviewer → Real user feedback → Pilot
+```
+
+A real client is not needed to start, but AURA must not stay indefinitely without external validation. Candidate reviewers: a finance analyst, an operations professional, a developer, a technical recruiter, a data professional. Not scheduled; first candidate checkpoint is after Stage 4.

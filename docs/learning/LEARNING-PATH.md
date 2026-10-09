@@ -2,7 +2,7 @@
 
 Status scale: `NOT STARTED` → `LEARNING` → `PRACTICING` → `INDEPENDENT`.
 
-A status moves up only with evidence: a journal entry, a commit, a test, or a decision the operator made and can explain. Initial state is deliberately conservative.
+**Knowledge ≠ practical evidence.** A status does not move because a topic was studied, read in a tutorial, documented, or explained by the agent. It moves with proof of work: something the operator implemented, tested or shipped (a commit, test, PR, CI run, eval) and can explain. Example: FastAPI stays `NOT STARTED` until the operator has built an endpoint. Initial state is deliberately conservative.
 
 | Competency | Status | Evidence |
 |---|---|---|

@@ -27,4 +27,4 @@ Write a journal entry from [../learning/journal/_TEMPLATE.md](../learning/journa
 7. **Next session**: the next logical step.
 8. **Reflection**: if the session taught something about *how we work*, consider `/reflect`. It is not a substitute for the factual record above.
 
-Then run `python tools/check_docs.py` and review `git diff` before committing.
+Then run `python tools/check_docs.py` and review `git diff` before committing. Last question: did this session produce executable engineering? If not, check the documentation budget in [WORKING-MODEL.md](WORKING-MODEL.md).

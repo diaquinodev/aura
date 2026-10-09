@@ -14,6 +14,7 @@ Canonical, durable documentation. Each topic lives in exactly one file.
 | Process | [process/SESSION-LIFECYCLE.md](process/SESSION-LIFECYCLE.md) | What happens at session start, during, and end |
 | Process | [process/COMMUNICATION.md](process/COMMUNICATION.md) | Corporate communication policy and templates (source of truth) |
 | Learning | [learning/README.md](learning/README.md) | Training levels and the learning area |
+| Proof of work | [case-studies/_TEMPLATE.md](case-studies/_TEMPLATE.md) | Case study format for relevant technical problems |
 | Simulation | [../simulation/AURA-SYN-001.md](../simulation/AURA-SYN-001.md) | First synthetic organization and its personas |
 
 Historical (superseded, kept for the record): [product/AURA-FLOW.md](product/AURA-FLOW.md), the first product direction. See decision 0007.

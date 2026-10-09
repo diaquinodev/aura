@@ -17,7 +17,7 @@ Example of the split:
 | 2 | Assisted | Gives context, does mechanical tasks, reviews, questions decisions | Prioritizes, investigates, decides architecture, implements critical parts |
 | 3 | Professional | Provides ticket, business context, tools, evidence | Works as a real team member |
 
-The level changes only by the operator's decision, recorded in `brain/decisions/`, with evidence from [LEARNING-PATH.md](LEARNING-PATH.md). When it changes, update the `TRAINING_LEVEL` line here, in [../../README.md](../../README.md) and in [../../AGENTS.md](../../AGENTS.md); `tools/check_docs.py` fails if they disagree.
+The level changes only by the operator's decision, recorded in `brain/decisions/`, with proof of work from [LEARNING-PATH.md](LEARNING-PATH.md). Moving from Guided to Assisted requires growing, demonstrated ability to interpret tickets, prioritize, implement, test and explain decisions; reading about them is not enough. When it changes, update the `TRAINING_LEVEL` line here, in [../../README.md](../../README.md) and in [../../AGENTS.md](../../AGENTS.md); `tools/check_docs.py` fails if they disagree.
 
 ## Files
 
