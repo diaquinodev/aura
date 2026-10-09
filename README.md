@@ -118,7 +118,11 @@ Depois abra `http://127.0.0.1:8000/health`.
 
 ## Proof
 
-Por enquanto, só o sistema de documentação e o esqueleto do serviço. A partir do Stage 1, cada capability aponta aqui para seus testes, PR, execução de CI e métricas, com rótulo SYNTHETIC ou REAL.
+Cada capability aponta aqui para seus testes, PR, execução de CI e métricas, com rótulo SYNTHETIC ou REAL.
+
+| Capability | Testes | PR | CI |
+|---|---|---|---|
+| Esqueleto do serviço (`GET /health`) e CI | [tests/test_health.py](tests/test_health.py) | [#7](https://github.com/diaquinodev/aura/pull/7) | [execução](https://github.com/diaquinodev/aura/actions/runs/37925319032) |
 
 ## Demo
 
