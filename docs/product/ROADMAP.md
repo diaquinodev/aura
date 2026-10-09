@@ -5,7 +5,7 @@ Capability-based, no dates. A stage is done when its capability is demonstrated 
 | Stage | Name | Capability | Status |
 |---|---|---|---|
 | 0 | Foundation | Documentation, Git, learning system, pstack | Complete |
-| 1 | Engineering Core | Python + FastAPI service, tests, Git workflow | Not started |
+| 1 | Engineering Core | Python + FastAPI service, tests, Git workflow | In progress |
 | 2 | Enterprise Simulation | Synthetic company, personas, Jira, meetings | Not started |
 | 3 | Data & Persistence | PostgreSQL, synthetic datasets, audit model | Not started |
 | 4 | Finance Workflow | Intelligent Accounts Payable workflow end to end | Not started |
@@ -28,8 +28,8 @@ From Stage 1 on, a stage is complete only with executable evidence (hard rule in
 
 ## Stage 1 definition of done
 
-- [ ] Python project initialized
-- [ ] FastAPI service running locally
+- [x] Python project initialized
+- [x] FastAPI service running locally
 - [ ] Pydantic schemas for the invoice domain
 - [ ] Deterministic invoice validation
 - [ ] Deterministic 3-way match

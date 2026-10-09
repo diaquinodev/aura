@@ -10,14 +10,14 @@ Business event → Ticket → Triage → Prioritization → Investigation → Im
 | Step | Plain meaning | Today |
 |---|---|---|
 | Business event | Something happens: a (simulated) customer complaint, a bug, a new need | Not implemented (Stage 2) |
-| Ticket | The event is written down as a unit of work with a clear outcome | Not implemented (Stage 2) |
-| Triage | Is it real, how urgent, who owns it? | Not implemented (Stage 2) |
-| Prioritization | Compared against other work by value, risk and cost | Not implemented (Stage 2) |
+| Ticket | The event is written down as a unit of work with a clear outcome | GitHub Issues (format: `COMMUNICATION.md`) |
+| Triage | Is it real, how urgent, who owns it? | Manual, on the issue |
+| Prioritization | Compared against other work by value, risk and cost | Milestones as sprints (`Sprint 1`, `Sprint 2`) |
 | Investigation | Understand the system and the cause before changing anything | Manual, with pstack `/how` and `/why` |
-| Implementation | Smallest correct change on a branch; `main` is the stable baseline, changes reach it via PR | Rule set; first branch in Bootstrap 02 |
-| Verification | Prove it works: tests, commands, evidence (see Valid progress below) | `tools/check_docs.py` only |
-| Review | Someone else (human or agent) challenges the change | Not implemented |
-| CI | Automated checks on every change | Not implemented (Stage 1) |
+| Implementation | Smallest correct change on a branch; `main` is the stable baseline, changes reach it via PR | Branch + PR on GitHub |
+| Verification | Prove it works: tests, commands, evidence (see Valid progress below) | pytest + `tools/check_docs.py` |
+| Review | Someone else (human or agent) challenges the change | Operator reviews and merges PRs; PR template in `.github/` |
+| CI | Automated checks on every change | GitHub Actions (`.github/workflows/ci.yml`) |
 | Release | The change reaches users | Not implemented |
 | Feedback | What users (simulated) say or do | Not implemented (Stage 2) |
 | Metrics | Numbers that show if the change helped | Not implemented (Stage 7) |

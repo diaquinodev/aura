@@ -14,6 +14,7 @@ Durable choices. Format: header line with Status, Owner, Date; then Context, Dec
 - [0006](decisions/0006-communication-policy-location.md): communication policy lives in `docs/process/COMMUNICATION.md`, referenced from `AGENTS.md`; no Rule or Skill yet.
 - [0007](decisions/0007-pivot-to-enterprise-agentic-automation.md): pivot from vertical healthcare SaaS to enterprise agentic automation; Aura Ops, Accounts Payable first. Records the previous direction.
 - [0008](decisions/0008-synthetic-tenant-identifiers.md): synthetic organizations use `AURA-SYN-NNN` IDs, not brand-like names.
+- [0009](decisions/0009-tooling-and-work-management.md): venv + pip + pyproject; GitHub Issues, Milestones as sprints, Actions for CI; private repo.
 
 ## Insights
 
