@@ -41,6 +41,8 @@ O conjunto de evidências que permite a outra pessoa verificar que o trabalho fo
 
 **Proof of authorship.** Entregas relevantes registram o *porquê*, não apenas o *quê*. O operador deve ser capaz de responder: Por que esta arquitetura? Por que este banco de dados? Por que IA aqui, e por que não código determinístico? Quais modos de falha existem? Quais são os trade-offs? O que quebra em uma escala maior? Como foi verificado?
 
+A partir do #3, o código de produto e as seções "Como foi verificado" e "Riscos" dos PRs são escritos pelo operador; o agente explica, revisa e cuida da infraestrutura de apoio.
+
 ### Evidência
 
 Toda afirmação técnica relevante é escrita assim:
