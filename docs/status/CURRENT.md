@@ -32,7 +32,6 @@ Até o Stage 1 fechar, nenhuma documentação nova além deste arquivo e dos jou
 | Histórico de commits com co-autoria do agente | Um leitor pode concluir que o repositório foi gerado por agente | Código de produto escrito pelo operador a partir do #3 | Operador |
 | Sem lockfile de dependências | O CI pode instalar versões mais novas que as locais; os números do Case 001 não seriam reproduzíveis | Criar antes do Case 001 (item 4 ou antes do #6) | Engineering |
 | Sem board no GitHub Projects | Sprint visível apenas como milestones | `gh auth refresh -s project`, depois criar o board | Operador |
-| `/setup-pstack` não executado | As skills do pstack usam os modelos padrão | Executar `/setup-pstack` | Operador |
 | O enquadramento como plataforma convida scope creep | Muitos domínios construídos pela metade | "Um workflow real primeiro" (decisão 0007) | Operador |
 
 ## Decisões pendentes do operador
