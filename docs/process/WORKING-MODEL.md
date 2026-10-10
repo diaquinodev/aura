@@ -81,7 +81,7 @@ A documentação não deve crescer significativamente mais rápido que a engenha
 
 ## Ferramentas: pstack
 
-O pstack v0.15.15 está instalado como plugin do Cursor. Seus skills são usados a partir do plugin; nenhum é copiado para este repositório. `/setup-pstack` ainda não foi executado (não há `~/.cursor/rules/pstack-models.mdc`), então os skills usam seus modelos padrão.
+O pstack v0.15.15 está instalado como plugin do Cursor. Seus skills são usados a partir do plugin; nenhum é copiado para este repositório. `/setup-pstack` foi executado em 2026-10-10 com orçamento medium: `~/.cursor/rules/pstack-models.mdc` (fora do repositório, por máquina) define Grok 4.7 high para papéis de execução e Opus 5.5 medium para papéis de julgamento. Rode `/setup-pstack` de novo para mudar.
 
 | Situação | Usar |
 |---|---|
