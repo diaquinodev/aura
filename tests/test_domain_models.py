@@ -6,20 +6,24 @@ from pydantic import ValidationError
 from aura_ops.domain import Invoice, InvoiceItem
 
 
-def test_valid_invoice_is_accepted():
-    item = InvoiceItem(
-        item_code="PEN",
-        quantity=10,
-        unit_price=Decimal("2.50"),
-        declared_total=Decimal("25.00"),
-    )
+def make_item(**overrides):
+    data = {
+        "item_code": "PEN",
+        "quantity": 10,
+        "unit_price": Decimal("2.50"),
+        "declared_total": Decimal("25.00"),
+    }
+    data.update(overrides)
+    return InvoiceItem(**data)
 
+
+def test_valid_invoice_is_accepted():
     invoice = Invoice(
         supplier_id="SUP-001",
         invoice_number="F-001",
         po_number="PO-100",
         total=Decimal("25.00"),
-        items=[item],
+        items=[make_item()],
     )
 
     assert invoice.supplier_id == "SUP-001"
@@ -30,37 +34,20 @@ def test_valid_invoice_is_accepted():
 
 def test_invoice_item_with_negative_quantity_is_rejected():
     with pytest.raises(ValidationError):
-        InvoiceItem(
-            item_code="PEN",
-            quantity=-5,
-            unit_price=Decimal("2.50"),
-            declared_total=Decimal("25.00"),
-        )
+        make_item(quantity=-5)
 
 
 def test_invoice_item_with_zero_quantity_is_rejected():
     with pytest.raises(ValidationError):
-        InvoiceItem(
-            item_code="PEN",
-            quantity=0,
-            unit_price=Decimal("2.50"),
-            declared_total=Decimal("0.00"),
-        )
+        make_item(quantity=0, declared_total=Decimal("0.00"))
 
-        
+
 def test_invoice_with_empty_supplier_id_is_rejected():
-    item = InvoiceItem(
-        item_code="PEN",
-        quantity=10,
-        unit_price=Decimal("2.50"),
-        declared_total=Decimal("25.00"),
-    )
-
     with pytest.raises(ValidationError):
         Invoice(
             supplier_id="",
             invoice_number="F-001",
             po_number="PO-100",
             total=Decimal("25.00"),
-            items=[item],
+            items=[make_item()],
         )
