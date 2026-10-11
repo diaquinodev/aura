@@ -1,11 +1,10 @@
 from decimal import Decimal
 
-from pydantic import BaseModel
-
+from pydantic import BaseModel, Field
 
 class InvoiceItem(BaseModel):
     item_code: str
-    quantity: int
+    quantity: int = Field(gt=0)
     unit_price: Decimal
     declared_total: Decimal
 
