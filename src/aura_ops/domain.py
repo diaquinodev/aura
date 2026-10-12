@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class InvoiceItem(BaseModel):
@@ -11,8 +11,10 @@ class InvoiceItem(BaseModel):
 
 
 class Invoice(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True)
+
     supplier_id: str = Field(min_length=1)
-    invoice_number: str
-    po_number: str
+    invoice_number: str = Field(min_length=1)
+    po_number: str = Field(min_length=1)
     total: Decimal
     items: list[InvoiceItem]
