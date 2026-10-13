@@ -66,3 +66,14 @@ def test_invoice_item_with_non_positive_money_is_rejected(field, amount):
 def test_invoice_with_non_positive_total_is_rejected(amount):
     with pytest.raises(ValidationError):
         make_invoice(total=amount)
+
+
+@pytest.mark.parametrize("field", ["unit_price", "declared_total"])
+def test_invoice_item_with_float_money_is_rejected(field):
+    with pytest.raises(ValidationError):
+        make_item(**{field: 2.5})
+
+
+def test_invoice_with_float_total_is_rejected():
+    with pytest.raises(ValidationError):
+        make_invoice(total=25.0)
