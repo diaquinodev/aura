@@ -53,3 +53,16 @@ def test_invoice_item_with_zero_quantity_is_rejected():
 def test_invoice_with_blank_identifier_is_rejected(field, blank):
     with pytest.raises(ValidationError):
         make_invoice(**{field: blank})
+
+
+@pytest.mark.parametrize("field", ["unit_price", "declared_total"])
+@pytest.mark.parametrize("amount", [Decimal("-1.00"), Decimal("0.00")])
+def test_invoice_item_with_non_positive_money_is_rejected(field, amount):
+    with pytest.raises(ValidationError):
+        make_item(**{field: amount})
+
+
+@pytest.mark.parametrize("amount", [Decimal("-1.00"), Decimal("0.00")])
+def test_invoice_with_non_positive_total_is_rejected(amount):
+    with pytest.raises(ValidationError):
+        make_invoice(total=amount)
